@@ -76,3 +76,10 @@ src/api/*
 /jars/*
 /build/*
 /Models/*
+*.bat
+Tinkers-Defense.api.iml
+Tinkers-Defense.iml
+Tinkers-Defense.ipr
+Tinkers-Defense.iws
+Tinkers-Defense.main.iml
+Tinkers-Defense.test.iml
