@@ -72,7 +72,7 @@ public class ModelJewelersBench extends ModelBase {
     }
 
     @Override
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.SawBlock1.render(f5);
         this.Leg4.render(f5);
         this.Drawer.render(f5);
