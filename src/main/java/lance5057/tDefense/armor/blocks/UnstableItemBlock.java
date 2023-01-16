@@ -4,17 +4,14 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
 
-public class UnstableItemBlock extends ItemBlockWithMetadata
-{
+public class UnstableItemBlock extends ItemBlockWithMetadata {
 
-	public UnstableItemBlock(Block block)
-	{
-		super(block, block);
-	}
+    public UnstableItemBlock(Block block) {
+        super(block, block);
+    }
 
-	@Override
-	public String getUnlocalizedName(ItemStack stack)
-	{
-		return this.getUnlocalizedName() + "_" + UnstableBlock.types[stack.getItemDamage()];
-	}
+    @Override
+    public String getUnlocalizedName(ItemStack stack) {
+        return this.getUnlocalizedName() + "_" + UnstableBlock.types[stack.getItemDamage()];
+    }
 }
