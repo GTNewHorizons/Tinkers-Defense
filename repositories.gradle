@@ -1,0 +1,14 @@
+repositories {
+    maven {
+        name 'GTNH Maven'
+        url 'http://jenkins.usrv.eu:8081/nexus/content/repositories/public/'
+    }
+    maven {
+        name 'GTNH Mods for Jenkins'
+        url 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/'
+        metadataSources {
+            mavenPom()
+            artifact()
+        }
+    }
+}
