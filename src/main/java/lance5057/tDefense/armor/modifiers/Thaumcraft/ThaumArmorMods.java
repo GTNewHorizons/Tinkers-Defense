@@ -14,46 +14,49 @@ import tconstruct.library.crafting.ModifyBuilder;
 import tconstruct.library.tools.ToolCore;
 import thaumcraft.api.ItemApi;
 
-public class ThaumArmorMods extends ModifiersBase
-{
+public class ThaumArmorMods extends ModifiersBase {
 
-	//Runic Shielding is handled in ArmorCore.java
+    // Runic Shielding is handled in ArmorCore.java
 
-	public ThaumArmorMods()
-	{
-		super(new String[] {}, "modItemsThaumArmor");
-		// TODO Auto-generated constructor stub
-	}
+    public ThaumArmorMods() {
+        super(new String[] {}, "modItemsThaumArmor");
+        // TODO Auto-generated constructor stub
+    }
 
-	@Override
-	public void RegisterRecipes()
-	{
-	}
+    @Override
+    public void RegisterRecipes() {}
 
-	@Override
-	public void RegisterModifiers()
-	{
-		ModifyBuilder.registerModifier(new ModifierBoolExclusive(
-				new ItemStack[] {ItemApi.getItem("itemGoggles", 0)},
-				TinkersDefense.config.RevealingModID, "Revealing", "\u00A75",
-				"Revealing", new String[] {"head"}, 0, null));
+    @Override
+    public void RegisterModifiers() {
+        ModifyBuilder.registerModifier(new ModifierBoolExclusive(
+                new ItemStack[] {ItemApi.getItem("itemGoggles", 0)},
+                TinkersDefense.config.RevealingModID,
+                "Revealing",
+                "\u00A75",
+                "Revealing",
+                new String[] {"head"},
+                0,
+                null));
 
-		ModifyBuilder.registerModifier(new ModifierIntExclusive(
-				new ItemStack[] {ItemApi.getItem("itemResource", 7)},
-				TinkersDefense.config.VisDiscountModID, "VisEmbroidery", 1,
-				"\u00A79", "Vis Embroidery", new String[] {"cloth"}, 1,
-				new String[] {}));
+        ModifyBuilder.registerModifier(new ModifierIntExclusive(
+                new ItemStack[] {ItemApi.getItem("itemResource", 7)},
+                TinkersDefense.config.VisDiscountModID,
+                "VisEmbroidery",
+                1,
+                "\u00A79",
+                "Vis Embroidery",
+                new String[] {"cloth"},
+                1,
+                new String[] {}));
 
-		for(final ToolCore tool : TConstructRegistry.getToolMapping())
-		{
-			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.RevealingModID, "tinker", "revealing", true);
-			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.VisDiscountModID, "tinker", "visembroidery", true);
+        for (final ToolCore tool : TConstructRegistry.getToolMapping()) {
+            TConstructClientRegistry.addEffectRenderMapping(
+                    tool, TinkersDefense.config.RevealingModID, "tinker", "revealing", true);
+            TConstructClientRegistry.addEffectRenderMapping(
+                    tool, TinkersDefense.config.VisDiscountModID, "tinker", "visembroidery", true);
+        }
+    }
 
-		}
-	}
-
-	@Override
-	public void UpdateAll(ToolCore tool, ItemStack stack, World world, Entity entity, NBTTagCompound tags)
-	{
-	}
+    @Override
+    public void UpdateAll(ToolCore tool, ItemStack stack, World world, Entity entity, NBTTagCompound tags) {}
 }

@@ -1,22 +1,24 @@
-//package lance5057.tDefense.core.renderer;
+// package lance5057.tDefense.core.renderer;
 //
-//import java.util.Map;
+// import java.util.Map;
 //
-//import com.google.common.collect.Maps;
+// import com.google.common.collect.Maps;
 //
-//import net.minecraft.client.Minecraft;
-//import net.minecraft.client.model.ModelHorse;
-//import net.minecraft.client.renderer.entity.RenderHorse;
-//import net.minecraft.client.renderer.texture.ITextureObject;
-//import net.minecraft.client.renderer.texture.LayeredTexture;
-//import net.minecraft.entity.Entity;
-//import net.minecraft.entity.passive.EntityHorse;
-//import net.minecraft.util.ResourceLocation;
+// import net.minecraft.client.Minecraft;
+// import net.minecraft.client.model.ModelHorse;
+// import net.minecraft.client.renderer.entity.RenderHorse;
+// import net.minecraft.client.renderer.texture.ITextureObject;
+// import net.minecraft.client.renderer.texture.LayeredTexture;
+// import net.minecraft.entity.Entity;
+// import net.minecraft.entity.passive.EntityHorse;
+// import net.minecraft.util.ResourceLocation;
 //
-//public class TestSkinChanger extends RenderHorse
-//{
+// public class TestSkinChanger extends RenderHorse
+// {
 //	private static final Map	textures	= Maps.newHashMap();
-//    private static final String[] horseArmorTextures = new String[] {null, "textures/entity/horse/armor/horse_armor_iron.png", "textures/entity/horse/armor/horse_armor_gold.png", "textures/entity/horse/armor/horse_armor_diamond.png"};
+//    private static final String[] horseArmorTextures = new String[] {null,
+// "textures/entity/horse/armor/horse_armor_iron.png", "textures/entity/horse/armor/horse_armor_gold.png",
+// "textures/entity/horse/armor/horse_armor_diamond.png"};
 //    private String[] combinedHorseTextures = new String[3];
 //
 //	public TestSkinChanger()
@@ -55,4 +57,4 @@
 //
 //        return resourcelocation;
 //	}
-//}
+// }

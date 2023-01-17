@@ -7,20 +7,23 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class GuideBook extends Item
-{
-	public GuideBook()
-	{
-		setCreativeTab(TinkersDefense.tabName);
-		setMaxStackSize(1);
-		setUnlocalizedName("guidebook");
-		setTextureName(Reference.MOD_ID + ":tdbook");
-	}
+public class GuideBook extends Item {
+    public GuideBook() {
+        setCreativeTab(TinkersDefense.tabName);
+        setMaxStackSize(1);
+        setUnlocalizedName("guidebook");
+        setTextureName(Reference.MOD_ID + ":tdbook");
+    }
 
-	@Override
-	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
-	{
-		player.openGui(TinkersDefense.instance, TinkersDefense.GUI_GUIDEBOOK, player.worldObj, (int) player.posX, (int) player.posY, (int) player.posZ);
-		return stack;
-	}
+    @Override
+    public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
+        player.openGui(
+                TinkersDefense.instance,
+                TinkersDefense.GUI_GUIDEBOOK,
+                player.worldObj,
+                (int) player.posX,
+                (int) player.posY,
+                (int) player.posZ);
+        return stack;
+    }
 }
