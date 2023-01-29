@@ -12,6 +12,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.Constants;
 
 public class TileEntity_FinishingAnvil extends TileEntity implements IInventory {
+
     public static int invSize = 1;
     public ItemStack[] inventory;
 

@@ -7,6 +7,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class Container_FinishingAnvil extends Container {
+
     public Container_FinishingAnvil(InventoryPlayer inventoryPlayer, TileEntity_FinishingAnvil te) {
         addSlotToContainer(new Slot(te, 0, 39, 32));
 

@@ -6,13 +6,16 @@ import lance5057.tDefense.core.tools.modifiers.BloodMagic.BloodMagicMods;
 import lance5057.tDefense.core.tools.modifiers.Botania.BotaniaMods;
 import lance5057.tDefense.core.tools.modifiers.TDefense.TDMods;
 import lance5057.tDefense.core.tools.modifiers.Thaumcraft.ThaumcraftMods;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+
 import tconstruct.library.tools.ToolCore;
 
 public class Modifiers {
+
     public static TDMods TMod;
     public static ArmorMods AMod;
     public static BotaniaMods BotMod;

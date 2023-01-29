@@ -1,15 +1,17 @@
 package lance5057.tDefense.armor.renderers;
 
 import lance5057.tDefense.armor.ArmorCore;
+
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+
 import org.lwjgl.opengl.GL11;
 
 /**
- * ModelBiped - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * ModelBiped - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersTabard extends ArmorRenderer {
+
     public ModelRenderer Tabard;
     public ModelRenderer TabardBottomF;
     public ModelRenderer TabardBottomB;

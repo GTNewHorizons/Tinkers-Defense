@@ -1,13 +1,12 @@
 package lance5057.tDefense.core.tools;
 
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
+
 import mods.battlegear2.api.ISheathed;
 import mods.battlegear2.api.shield.IArrowCatcher;
 import mods.battlegear2.api.shield.IArrowDisplay;
 import mods.battlegear2.api.shield.IShield;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -23,15 +22,18 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
-import tconstruct.library.tools.ToolCore;
 
-@Optional.InterfaceList({
-    @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.ISheathed"),
-    @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.shield.IArrowCatcher"),
-    @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.shield.IArrowDisplay"),
-    @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.shield.IShield")
-})
+import tconstruct.library.tools.ToolCore;
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+@Optional.InterfaceList({ @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.ISheathed"),
+        @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.shield.IArrowCatcher"),
+        @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.shield.IArrowDisplay"),
+        @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.shield.IShield") })
 public class Shield extends ToolCore implements IShield, ISheathed, IArrowCatcher, IArrowDisplay {
+
     public Shield(int baseDamage) {
         super(baseDamage);
     }
@@ -54,8 +56,7 @@ public class Shield extends ToolCore implements IShield, ISheathed, IArrowCatche
     }
 
     /**
-     * returns the action that specifies what animation to play when the items
-     * is being used
+     * returns the action that specifies what animation to play when the items is being used
      */
     @Override
     public EnumAction getItemUseAction(ItemStack par1ItemStack) {
@@ -71,8 +72,7 @@ public class Shield extends ToolCore implements IShield, ISheathed, IArrowCatche
     }
 
     /**
-     * Called whenever this item is equipped and the right mouse button is
-     * pressed. Args: itemStack, world, entityPlayer
+     * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
@@ -81,17 +81,8 @@ public class Shield extends ToolCore implements IShield, ISheathed, IArrowCatche
     }
 
     @Override
-    public boolean onItemUse(
-            ItemStack stack,
-            EntityPlayer player,
-            World world,
-            int x,
-            int y,
-            int z,
-            int side,
-            float clickX,
-            float clickY,
-            float clickZ) {
+    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side,
+            float clickX, float clickY, float clickZ) {
         return false;
     }
 
@@ -128,10 +119,10 @@ public class Shield extends ToolCore implements IShield, ISheathed, IArrowCatche
 
     @Override
     public String[] getTraits() {
-        return new String[] {"shield", "blocking"};
+        return new String[] { "shield", "blocking" };
     }
 
-    public static Material[] web = new Material[] {Material.web, Material.cloth, Material.coral, Material.cake};
+    public static Material[] web = new Material[] { Material.web, Material.cloth, Material.coral, Material.cake };
     public static Material[] none = new Material[0];
 
     protected String getHarvestType() {
@@ -263,28 +254,25 @@ public class Shield extends ToolCore implements IShield, ISheathed, IArrowCatche
     @Override
     @Optional.Method(modid = "battlegear2")
     @SideOnly(Side.CLIENT)
-    public void addInformation(
-            ItemStack par1ItemStack,
-            EntityPlayer par2EntityPlayer,
-            @SuppressWarnings("rawtypes") List par3List,
-            boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
+            @SuppressWarnings("rawtypes") List par3List, boolean par4) {
         final NBTTagCompound tags = par1ItemStack.getTagCompound();
         super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
         par3List.add("");
-        par3List.add(EnumChatFormatting.DARK_GREEN
-                + ItemStack.field_111284_a.format(1F
-                        / (10f
-                                / (tags.getCompoundTag("InfiTool").getInteger("MiningSpeed")
-                                        + (tags.getCompoundTag("InfiTool").getInteger("feathers") * 300) / 1.5f))
-                        / 20F)
-                + StatCollector.translateToLocal("attribute.shield.block.time"));
+        par3List.add(
+                EnumChatFormatting.DARK_GREEN
+                        + ItemStack.field_111284_a.format(
+                                1F / (10f / (tags.getCompoundTag("InfiTool").getInteger("MiningSpeed")
+                                        + (tags.getCompoundTag("InfiTool").getInteger("feathers") * 300) / 1.5f)) / 20F)
+                        + StatCollector.translateToLocal("attribute.shield.block.time"));
         final int arrowCount = getArrowCount(par1ItemStack);
         if (arrowCount > 0) {
-            par3List.add(String.format(
-                    "%s%s %s",
-                    EnumChatFormatting.GOLD,
-                    arrowCount,
-                    StatCollector.translateToLocal("attribute.shield.arrow.count")));
+            par3List.add(
+                    String.format(
+                            "%s%s %s",
+                            EnumChatFormatting.GOLD,
+                            arrowCount,
+                            StatCollector.translateToLocal("attribute.shield.arrow.count")));
         }
     }
 }

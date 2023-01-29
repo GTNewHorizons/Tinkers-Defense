@@ -1,10 +1,8 @@
 package lance5057.tDefense.core.tools.modifiers.TDefense;
 
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import java.util.ArrayList;
 import java.util.Random;
+
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.core.tools.ModifierSoul;
 import lance5057.tDefense.core.tools.Shield;
@@ -16,6 +14,7 @@ import lance5057.tDefense.core.tools.modifiers.modLapisShears;
 import lance5057.tDefense.proxy.CommonProxy;
 import mods.battlegear2.api.PlayerEventChild.ShieldBlockEvent;
 import mods.battlegear2.api.core.IBattlePlayer;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -41,31 +40,24 @@ import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.oredict.OreDictionary;
+
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.client.TConstructClientRegistry;
 import tconstruct.library.crafting.ModifyBuilder;
 import tconstruct.library.tools.ToolCore;
 import tconstruct.tools.TinkerTools;
 import tconstruct.weaponry.TinkerWeaponry;
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class TDMods extends ModifiersBase {
+
     public TDMods() {
         super(
-                new String[] {
-                    "AncientRelic",
-                    "RainbowGem",
-                    "Textbook",
-                    "SoulStone",
-                    "CrestFeathers",
-                    "CrestMirrors",
-                    "CrestLegends",
-                    "CrestGluttony",
-                    "CrestThorns",
-                    "CrestSanguisuga",
-                    "CrestWinds",
-                    "CrestLight",
-                    "CrestPaper"
-                },
+                new String[] { "AncientRelic", "RainbowGem", "Textbook", "SoulStone", "CrestFeathers", "CrestMirrors",
+                        "CrestLegends", "CrestGluttony", "CrestThorns", "CrestSanguisuga", "CrestWinds", "CrestLight",
+                        "CrestPaper" },
                 "modItemsCore");
     }
 
@@ -76,184 +68,126 @@ public class TDMods extends ModifiersBase {
         ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST)
                 .addItem(new WeightedRandomChestContent(new ItemStack(modItems, 1, 3), 1, 1, 1));
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 1), new Object[] {
-            "111",
-            "1d1",
-            "111",
-            'd',
-            new ItemStack(Items.diamond, 1, 0),
-            '1',
-            new ItemStack(Items.dye, 1, OreDictionary.WILDCARD_VALUE)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 1),
+                new Object[] { "111", "1d1", "111", 'd', new ItemStack(Items.diamond, 1, 0), '1',
+                        new ItemStack(Items.dye, 1, OreDictionary.WILDCARD_VALUE) });
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 2), new Object[] {
-            "-1-",
-            "1d1",
-            "-1-",
-            'd',
-            new ItemStack(Items.enchanted_book, 1, OreDictionary.WILDCARD_VALUE),
-            '1',
-            new ItemStack(Items.experience_bottle, 1, 0)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 2),
+                new Object[] { "-1-", "1d1", "-1-", 'd',
+                        new ItemStack(Items.enchanted_book, 1, OreDictionary.WILDCARD_VALUE), '1',
+                        new ItemStack(Items.experience_bottle, 1, 0) });
 
         GameRegistry.addShapelessRecipe(
-                new ItemStack(modItems, 1, 12), new ItemStack(Items.enchanted_book, 1, OreDictionary.WILDCARD_VALUE));
+                new ItemStack(modItems, 1, 12),
+                new ItemStack(Items.enchanted_book, 1, OreDictionary.WILDCARD_VALUE));
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 4), new Object[] {
-            "fcf",
-            "sps",
-            "fcf",
-            'f',
-            new ItemStack(Items.feather, 1, -1),
-            'c',
-            new ItemStack(TinkersDefense.partCloth, 1, OreDictionary.WILDCARD_VALUE),
-            's',
-            new ItemStack(Items.string, 1, -1),
-            'p',
-            new ItemStack(modItems, 1, 12)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 4),
+                new Object[] { "fcf", "sps", "fcf", 'f', new ItemStack(Items.feather, 1, -1), 'c',
+                        new ItemStack(TinkersDefense.partCloth, 1, OreDictionary.WILDCARD_VALUE), 's',
+                        new ItemStack(Items.string, 1, -1), 'p', new ItemStack(modItems, 1, 12) });
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 5), new Object[] {
-            "gng",
-            "spc",
-            "gbg",
-            'g',
-            new ItemStack(Blocks.glass_pane, 1, -1),
-            'c',
-            new ItemStack(TinkersDefense.partCloth, 1, OreDictionary.WILDCARD_VALUE),
-            's',
-            new ItemStack(Blocks.sand, 1, OreDictionary.WILDCARD_VALUE),
-            'p',
-            new ItemStack(modItems, 1, 12),
-            'n',
-            new ItemStack(Items.nether_star, 1, 0),
-            'b',
-            new ItemStack(Blocks.gold_block, 1, 12)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 5),
+                new Object[] { "gng", "spc", "gbg", 'g', new ItemStack(Blocks.glass_pane, 1, -1), 'c',
+                        new ItemStack(TinkersDefense.partCloth, 1, OreDictionary.WILDCARD_VALUE), 's',
+                        new ItemStack(Blocks.sand, 1, OreDictionary.WILDCARD_VALUE), 'p',
+                        new ItemStack(modItems, 1, 12), 'n', new ItemStack(Items.nether_star, 1, 0), 'b',
+                        new ItemStack(Blocks.gold_block, 1, 12) });
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 6), new Object[] {
-            "-r-", "-p-", "---", 'r', new ItemStack(modItems, 1, 0), 'p', new ItemStack(modItems, 1, 12)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 6),
+                new Object[] { "-r-", "-p-", "---", 'r', new ItemStack(modItems, 1, 0), 'p',
+                        new ItemStack(modItems, 1, 12) });
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 7), new Object[] {
-            "aaa",
-            "ipi",
-            "aaa",
-            'i',
-            TConstructRegistry.getItemStack("ingotPigIron"),
-            'p',
-            new ItemStack(modItems, 1, 12),
-            'a',
-            new ItemStack(TinkerWeaponry.arrowhead, 1, 5)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 7),
+                new Object[] { "aaa", "ipi", "aaa", 'i', TConstructRegistry.getItemStack("ingotPigIron"), 'p',
+                        new ItemStack(modItems, 1, 12), 'a', new ItemStack(TinkerWeaponry.arrowhead, 1, 5) });
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 8), new Object[] {
-            "aia",
-            "ipi",
-            "aia",
-            'i',
-            new ItemStack(Items.iron_ingot, 1, 0),
-            'p',
-            new ItemStack(modItems, 1, 12),
-            'a',
-            new ItemStack(TinkersDefense.partRivet, 1, 4)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 8),
+                new Object[] { "aia", "ipi", "aia", 'i', new ItemStack(Items.iron_ingot, 1, 0), 'p',
+                        new ItemStack(modItems, 1, 12), 'a', new ItemStack(TinkersDefense.partRivet, 1, 4) });
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 9), new Object[] {
-            "brb",
-            "apa",
-            "ara",
-            'b',
-            TConstructRegistry.getItemStack("necroticBone"),
-            'r',
-            new ItemStack(TinkerTools.toughRod, 1, 7),
-            'a',
-            new ItemStack(TinkerWeaponry.arrowhead, 1, 11),
-            'p',
-            new ItemStack(modItems, 1, 12)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 9),
+                new Object[] { "brb", "apa", "ara", 'b', TConstructRegistry.getItemStack("necroticBone"), 'r',
+                        new ItemStack(TinkerTools.toughRod, 1, 7), 'a', new ItemStack(TinkerWeaponry.arrowhead, 1, 11),
+                        'p', new ItemStack(modItems, 1, 12) });
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 10), new Object[] {
-            "PfP",
-            "tpt",
-            "PfP",
-            'P',
-            new ItemStack(Blocks.piston, 1, 0),
-            'p',
-            new ItemStack(modItems, 1, 12),
-            'f',
-            new ItemStack(Items.feather, 1, 0),
-            't',
-            new ItemStack(Items.ghast_tear, 1, 0)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 10),
+                new Object[] { "PfP", "tpt", "PfP", 'P', new ItemStack(Blocks.piston, 1, 0), 'p',
+                        new ItemStack(modItems, 1, 12), 'f', new ItemStack(Items.feather, 1, 0), 't',
+                        new ItemStack(Items.ghast_tear, 1, 0) });
 
-        GameRegistry.addShapedRecipe(new ItemStack(modItems, 1, 11), new Object[] {
-            "gbg",
-            "tpt",
-            "gbg",
-            'g',
-            new ItemStack(Blocks.glowstone, 1, 0),
-            'p',
-            new ItemStack(modItems, 1, 12),
-            'b',
-            new ItemStack(Items.blaze_rod, 1, 0),
-            't',
-            new ItemStack(Blocks.torch, 1, 0)
-        });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(modItems, 1, 11),
+                new Object[] { "gbg", "tpt", "gbg", 'g', new ItemStack(Blocks.glowstone, 1, 0), 'p',
+                        new ItemStack(modItems, 1, 12), 'b', new ItemStack(Items.blaze_rod, 1, 0), 't',
+                        new ItemStack(Blocks.torch, 1, 0) });
     }
 
     @Override
     public void RegisterModifiers() {
         // All
-        ModifyBuilder.registerModifier(new ModifierSoul(
-                new ItemStack[] {new ItemStack(modItems, 1, 3)},
-                TinkersDefense.config.SoulSteveID,
-                "Ensouled",
-                EnumChatFormatting.WHITE.toString(),
-                "Ensouled (Steve)",
-                new String[] {},
-                0,
-                null,
-                "Steve"));
+        ModifyBuilder.registerModifier(
+                new ModifierSoul(
+                        new ItemStack[] { new ItemStack(modItems, 1, 3) },
+                        TinkersDefense.config.SoulSteveID,
+                        "Ensouled",
+                        EnumChatFormatting.WHITE.toString(),
+                        "Ensouled (Steve)",
+                        new String[] {},
+                        0,
+                        null,
+                        "Steve"));
 
         // Weapons
         // TO-DO
-        ModifyBuilder.registerModifier(new ModifierIntExclusive(
-                new ItemStack[] {new ItemStack(Blocks.heavy_weighted_pressure_plate, 1, 0)},
-                TinkersDefense.config.DazeID,
-                "Daze",
-                1,
-                EnumChatFormatting.GRAY.toString(),
-                "Daze",
-                new String[] {"weapon"},
-                1,
-                null));
-        ModifyBuilder.registerModifier(new ModifierIntExclusive(
-                new ItemStack[] {new ItemStack(modItems, 1, 2)},
-                TinkersDefense.config.XPBoostID,
-                "XPBoost",
-                1,
-                EnumChatFormatting.GREEN.toString(),
-                "XP Boost",
-                new String[] {"weapon"},
-                1,
-                null));
+        ModifyBuilder.registerModifier(
+                new ModifierIntExclusive(
+                        new ItemStack[] { new ItemStack(Blocks.heavy_weighted_pressure_plate, 1, 0) },
+                        TinkersDefense.config.DazeID,
+                        "Daze",
+                        1,
+                        EnumChatFormatting.GRAY.toString(),
+                        "Daze",
+                        new String[] { "weapon" },
+                        1,
+                        null));
+        ModifyBuilder.registerModifier(
+                new ModifierIntExclusive(
+                        new ItemStack[] { new ItemStack(modItems, 1, 2) },
+                        TinkersDefense.config.XPBoostID,
+                        "XPBoost",
+                        1,
+                        EnumChatFormatting.GREEN.toString(),
+                        "XP Boost",
+                        new String[] { "weapon" },
+                        1,
+                        null));
 
         // Shears
-        ModifyBuilder.registerModifier(new ModifierBoolExclusive(
-                new ItemStack[] {new ItemStack(modItems, 1, 1)},
-                TinkersDefense.config.RainbowID,
-                "Rainbow",
-                EnumChatFormatting.WHITE.toString(),
-                "Rainbow",
-                new String[] {"shears"},
-                1,
-                null));
+        ModifyBuilder.registerModifier(
+                new ModifierBoolExclusive(
+                        new ItemStack[] { new ItemStack(modItems, 1, 1) },
+                        TinkersDefense.config.RainbowID,
+                        "Rainbow",
+                        EnumChatFormatting.WHITE.toString(),
+                        "Rainbow",
+                        new String[] { "shears" },
+                        1,
+                        null));
 
-        ModifyBuilder.registerModifier(new modLapisShears(
-                TinkersDefense.config.ShearFortuneID,
-                new ItemStack[] {new ItemStack(Items.dye, 1, 4), new ItemStack(Blocks.lapis_block, 1, 0)},
-                new int[] {1, 9}));
+        ModifyBuilder.registerModifier(
+                new modLapisShears(
+                        TinkersDefense.config.ShearFortuneID,
+                        new ItemStack[] { new ItemStack(Items.dye, 1, 4), new ItemStack(Blocks.lapis_block, 1, 0) },
+                        new int[] { 1, 9 }));
 
         // Shields
         RegisterCrestModifier(
@@ -275,9 +209,9 @@ public class TDMods extends ModifiersBase {
                 EnumChatFormatting.GOLD.toString(),
                 new ItemStack(modItems, 1, 6),
                 1);
-        //		RegisterCrestModifier(TinkersDefense.config.CrestBladesID, "Blades", 1, EnumChatFormatting.GRAY.toString(),
+        // RegisterCrestModifier(TinkersDefense.config.CrestBladesID, "Blades", 1, EnumChatFormatting.GRAY.toString(),
         // new ItemStack(
-        //				modItems, 1, 7), 1);
+        // modItems, 1, 7), 1);
         RegisterCrestModifier(
                 TinkersDefense.config.CrestGluttonyID,
                 "Gluttony",
@@ -285,9 +219,9 @@ public class TDMods extends ModifiersBase {
                 EnumChatFormatting.DARK_GREEN.toString(),
                 new ItemStack(modItems, 1, 7),
                 1);
-        //		RegisterCrestModifier(TinkersDefense.config.CrestPitchID, "Pitch", 1,
+        // RegisterCrestModifier(TinkersDefense.config.CrestPitchID, "Pitch", 1,
         // EnumChatFormatting.DARK_GRAY.toString(), new ItemStack(
-        //				modItems, 1, 8), 1);
+        // modItems, 1, 8), 1);
         RegisterCrestModifier(
                 TinkersDefense.config.CrestThornsID,
                 "Thorns",
@@ -309,9 +243,9 @@ public class TDMods extends ModifiersBase {
                 EnumChatFormatting.AQUA.toString(),
                 new ItemStack(modItems, 1, 10),
                 1);
-        //		RegisterCrestModifier(TinkersDefense.config.CrestRetributionID, "Retribution", 1,
+        // RegisterCrestModifier(TinkersDefense.config.CrestRetributionID, "Retribution", 1,
         // EnumChatFormatting.LIGHT_PURPLE.toString(), new ItemStack(
-        //				modItems, 1, 13), 1);
+        // modItems, 1, 13), 1);
         RegisterCrestModifier(
                 TinkersDefense.config.CrestLightID,
                 "Light",
@@ -321,10 +255,10 @@ public class TDMods extends ModifiersBase {
                 1);
 
         // Jokes
-        //		ModifyBuilder.registerModifier(new ModifierBoolExclusive(new ItemStack[] {new ItemStack(Blocks.glass_pane)},
+        // ModifyBuilder.registerModifier(new ModifierBoolExclusive(new ItemStack[] {new ItemStack(Blocks.glass_pane)},
         // TinkersDefense.config.JokeInsultID, "Insulting", EnumChatFormatting.AQUA.toString(), "Joke: Insulting", null,
         // 0, null));
-        //		ModifyBuilder.registerModifier(new ModifierBoolExclusive(new ItemStack[] {new ItemStack(Blocks.glass_pane)},
+        // ModifyBuilder.registerModifier(new ModifierBoolExclusive(new ItemStack[] {new ItemStack(Blocks.glass_pane)},
         // TinkersDefense.config.JokePyrotechID, "Pyrotech", EnumChatFormatting.AQUA.toString(), "Joke: Pyrotech", null,
         // 0, null));
         // ModifyBuilder.registerModifier(new modifierIntExclusive(new ItemStack[] {new ItemStack(Items.slime_ball)},
@@ -335,30 +269,30 @@ public class TDMods extends ModifiersBase {
 
         for (final ToolCore tool : TConstructRegistry.getToolMapping()) {
             TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.DazeID, "tinker", "daze", true);
-            TConstructClientRegistry.addEffectRenderMapping(
-                    tool, TinkersDefense.config.ShearFortuneID, "tinker", "lapis", true);
-            TConstructClientRegistry.addEffectRenderMapping(
-                    tool, TinkersDefense.config.RainbowID, "rainbow", "daze", true);
+            TConstructClientRegistry
+                    .addEffectRenderMapping(tool, TinkersDefense.config.ShearFortuneID, "tinker", "lapis", true);
+            TConstructClientRegistry
+                    .addEffectRenderMapping(tool, TinkersDefense.config.RainbowID, "rainbow", "daze", true);
 
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestFeathersID, "tinker",
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestFeathersID, "tinker",
             // "feathers", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestMirrorsID, "tinker",
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestMirrorsID, "tinker",
             // "mirrors", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestLegendsID, "tinker",
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestLegendsID, "tinker",
             // "legends", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestBladesID, "tinker",
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestBladesID, "tinker",
             // "blades", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestGluttonyID, "tinker",
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestGluttonyID, "tinker",
             // "gluttony", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestPitchID, "tinker",
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestPitchID, "tinker",
             // "pitch", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestSanguisugaID,
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestSanguisugaID,
             // "tinker", "sanguisuga", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestWindsID, "tinker",
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestWindsID, "tinker",
             // "wind", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestRetributionID,
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestRetributionID,
             // "tinker", "retribution", true);
-            //			TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestLightID, "tinker",
+            // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.CrestLightID, "tinker",
             // "light", true);
 
             // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.JokeInsultID, "tinker",
@@ -368,31 +302,36 @@ public class TDMods extends ModifiersBase {
             // TConstructClientRegistry.addEffectRenderMapping(tool, TinkersDefense.config.JokeCompensateID, "tinker",
             // "compensate", true);
 
-            TConstructClientRegistry.addEffectRenderMapping(
-                    tool, TinkersDefense.config.SoulBoundID, "tinker", "soulbound", true);
-            TConstructClientRegistry.addEffectRenderMapping(
-                    tool, TinkersDefense.config.RainbowID, "tinker", "rainbow", true);
-            TConstructClientRegistry.addEffectRenderMapping(
-                    tool, TinkersDefense.config.XPBoostID, "tinker", "textbook", true);
+            TConstructClientRegistry
+                    .addEffectRenderMapping(tool, TinkersDefense.config.SoulBoundID, "tinker", "soulbound", true);
+            TConstructClientRegistry
+                    .addEffectRenderMapping(tool, TinkersDefense.config.RainbowID, "tinker", "rainbow", true);
+            TConstructClientRegistry
+                    .addEffectRenderMapping(tool, TinkersDefense.config.XPBoostID, "tinker", "textbook", true);
         }
     }
 
     public void RegisterCrestModifier(int[] effect, String tag, int increase, String color, ItemStack item, int mods) {
         for (int i = 0; i < TinkersDefense.colors.length; i++) {
-            final ItemStack[] items = {item, new ItemStack(Items.dye, 1, i)};
-            ModifyBuilder.registerModifier(new ModifierIntExclusive(
-                    items,
-                    effect[i],
-                    tag.toLowerCase(),
-                    increase,
-                    color,
-                    "Crest of " + tag,
-                    new String[] {"shield"},
-                    mods,
-                    null));
+            final ItemStack[] items = { item, new ItemStack(Items.dye, 1, i) };
+            ModifyBuilder.registerModifier(
+                    new ModifierIntExclusive(
+                            items,
+                            effect[i],
+                            tag.toLowerCase(),
+                            increase,
+                            color,
+                            "Crest of " + tag,
+                            new String[] { "shield" },
+                            mods,
+                            null));
             for (final ToolCore tool : TConstructRegistry.getToolMapping()) {
                 TConstructClientRegistry.addEffectRenderMapping(
-                        tool, effect[i], "tinker", TinkersDefense.colors[i] + "_" + tag.toLowerCase(), true);
+                        tool,
+                        effect[i],
+                        "tinker",
+                        TinkersDefense.colors[i] + "_" + tag.toLowerCase(),
+                        true);
             }
         }
     }
@@ -400,19 +339,24 @@ public class TDMods extends ModifiersBase {
     public void RegisterCrestModifier(int[] effect, String tag, String color, ItemStack item, int mods) {
 
         for (int i = 0; i < TinkersDefense.colors.length; i++) {
-            final ItemStack[] items = {item, new ItemStack(Items.dye, 1, i)};
-            ModifyBuilder.registerModifier(new ModifierBoolExclusive(
-                    items,
-                    effect[i],
-                    tag.toLowerCase(),
-                    color,
-                    "Crest of " + tag,
-                    new String[] {"shield"},
-                    mods,
-                    null));
+            final ItemStack[] items = { item, new ItemStack(Items.dye, 1, i) };
+            ModifyBuilder.registerModifier(
+                    new ModifierBoolExclusive(
+                            items,
+                            effect[i],
+                            tag.toLowerCase(),
+                            color,
+                            "Crest of " + tag,
+                            new String[] { "shield" },
+                            mods,
+                            null));
             for (final ToolCore tool : TConstructRegistry.getToolMapping()) {
                 TConstructClientRegistry.addEffectRenderMapping(
-                        tool, effect[i], "tinker", TinkersDefense.colors[i] + "_" + tag.toLowerCase(), true);
+                        tool,
+                        effect[i],
+                        "tinker",
+                        TinkersDefense.colors[i] + "_" + tag.toLowerCase(),
+                        true);
             }
         }
     }
@@ -420,19 +364,24 @@ public class TDMods extends ModifiersBase {
     public void RegisterLegendModifier(int[] effect, String tag, String color, ItemStack item, int mods) {
 
         for (int i = 0; i < TinkersDefense.colors.length; i++) {
-            final ItemStack[] items = {item, new ItemStack(Items.dye, 1, i)};
-            ModifyBuilder.registerModifier(new ModifierBoolExclusive(
-                    items,
-                    effect[i],
-                    tag.toLowerCase(),
-                    color,
-                    "Crest of " + tag,
-                    new String[] {"heatershield"},
-                    mods,
-                    null));
+            final ItemStack[] items = { item, new ItemStack(Items.dye, 1, i) };
+            ModifyBuilder.registerModifier(
+                    new ModifierBoolExclusive(
+                            items,
+                            effect[i],
+                            tag.toLowerCase(),
+                            color,
+                            "Crest of " + tag,
+                            new String[] { "heatershield" },
+                            mods,
+                            null));
             for (final ToolCore tool : TConstructRegistry.getToolMapping()) {
                 TConstructClientRegistry.addEffectRenderMapping(
-                        tool, effect[i], "tinker", TinkersDefense.colors[i] + "_" + tag.toLowerCase(), true);
+                        tool,
+                        effect[i],
+                        "tinker",
+                        TinkersDefense.colors[i] + "_" + tag.toLowerCase(),
+                        true);
             }
         }
     }
@@ -463,8 +412,8 @@ public class TDMods extends ModifiersBase {
                     ((EntityLivingBase) entity).posZ + 3);
 
             @SuppressWarnings("unchecked")
-            final ArrayList<EntityFireball> fireballs =
-                    (ArrayList<EntityFireball>) world.getEntitiesWithinAABB(EntityFireball.class, boundingBox);
+            final ArrayList<EntityFireball> fireballs = (ArrayList<EntityFireball>) world
+                    .getEntitiesWithinAABB(EntityFireball.class, boundingBox);
             for (final EntityFireball fireball : fireballs) {
                 if (fireball.getDistanceSqToEntity((entity)) <= 25) {
                     final Vec3 playerlook = ((EntityLivingBase) entity).getLookVec();
@@ -493,7 +442,12 @@ public class TDMods extends ModifiersBase {
 
             if (world.isRemote) {
                 world.playSoundEffect(
-                        entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ, "minecraft:random.eat", 1, 1);
+                        entity.lastTickPosX,
+                        entity.lastTickPosY,
+                        entity.lastTickPosZ,
+                        "minecraft:random.eat",
+                        1,
+                        1);
             }
         }
     }
@@ -508,12 +462,13 @@ public class TDMods extends ModifiersBase {
                 final NBTTagCompound tags = itemstack.getTagCompound().getCompoundTag("InfiTool");
 
                 if (tags != null && tags.hasKey("XPBoost")) {
-                    player.worldObj.spawnEntityInWorld(new EntityXPOrb(
-                            player.worldObj,
-                            event.entityLiving.posX,
-                            event.entityLiving.posY,
-                            event.entityLiving.posZ,
-                            (int) Math.pow(tags.getInteger("XPBoost"), 2)));
+                    player.worldObj.spawnEntityInWorld(
+                            new EntityXPOrb(
+                                    player.worldObj,
+                                    event.entityLiving.posX,
+                                    event.entityLiving.posY,
+                                    event.entityLiving.posZ,
+                                    (int) Math.pow(tags.getInteger("XPBoost"), 2)));
                 }
             }
         }
@@ -586,19 +541,19 @@ public class TDMods extends ModifiersBase {
                     }
                 }
 
-                //				if(tags.hasKey("pitch"))
-                //				{
-                //					if(!event.entityPlayer.worldObj.isRemote && event.source.getEntity() instanceof EntityPlayer)
-                //					{
-                //						final EntityPlayer entity = (EntityPlayer) event.source.getEntity();
-                //						if(entity.getEquipmentInSlot(0) != null)
-                //						{
-                //							entity.entityDropItem(entity.getEquipmentInSlot(0), 5);
-                //							entity.setCurrentItemOrArmor(0, null);
-                //							//entity.setCanPickUpLoot(true);
-                //						}
-                //					}
-                //				}
+                // if(tags.hasKey("pitch"))
+                // {
+                // if(!event.entityPlayer.worldObj.isRemote && event.source.getEntity() instanceof EntityPlayer)
+                // {
+                // final EntityPlayer entity = (EntityPlayer) event.source.getEntity();
+                // if(entity.getEquipmentInSlot(0) != null)
+                // {
+                // entity.entityDropItem(entity.getEquipmentInSlot(0), 5);
+                // entity.setCurrentItemOrArmor(0, null);
+                // //entity.setCanPickUpLoot(true);
+                // }
+                // }
+                // }
 
                 if (tags.hasKey("wind")) {
                     if (!event.entityPlayer.worldObj.isRemote && event.source.getEntity() instanceof EntityLiving) {

@@ -3,10 +3,10 @@ package lance5057.tDefense.armor.renderers;
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * ModelTinkersGauntlet - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * ModelTinkersGauntlet - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersGauntlets extends ArmorRenderer {
+
     public ModelRenderer GloveR;
     public ModelRenderer VambraceR;
     public ModelRenderer RebraceR;

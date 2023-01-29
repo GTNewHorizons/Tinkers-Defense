@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.cloth;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * TinkersHood - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * TinkersHood - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersHood extends ArmorRenderer {
+
     public ModelRenderer Flop;
     public ModelRenderer Flop_1;
     public ModelRenderer Flop_2;

@@ -1,10 +1,10 @@
 package lance5057.tDefense.armor.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
 import java.util.Random;
+
 import lance5057.tDefense.Reference;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -15,11 +15,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class UnstableBlock extends Block {
-    public static final String[] types = {"ice", "obsidian"};
+
+    public static final String[] types = { "ice", "obsidian" };
     public int timer;
 
-    public static final String[] field_150096_a = new String[] {"ice", "obsidian"};
+    public static final String[] field_150096_a = new String[] { "ice", "obsidian" };
 
     @SideOnly(Side.CLIENT)
     private IIcon[] field_150095_b;
@@ -45,8 +49,7 @@ public class UnstableBlock extends Block {
     }
 
     /**
-     * Determines the damage on the item the block drops. Used in cloth and
-     * wood.
+     * Determines the damage on the item the block drops. Used in cloth and wood.
      */
     @Override
     public int damageDropped(int p_149692_1_) {
@@ -54,14 +57,13 @@ public class UnstableBlock extends Block {
     }
 
     /**
-     * returns a list of blocks with the same ID, but different meta (eg: wood
-     * returns 4 blocks)
+     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
     @SuppressWarnings("unchecked")
     @Override
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(
-            Item p_149666_1_, CreativeTabs p_149666_2_, @SuppressWarnings("rawtypes") List p_149666_3_) {
+    public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_,
+            @SuppressWarnings("rawtypes") List p_149666_3_) {
         p_149666_3_.add(new ItemStack(p_149666_1_, 1, 0));
         p_149666_3_.add(new ItemStack(p_149666_1_, 1, 1));
     }

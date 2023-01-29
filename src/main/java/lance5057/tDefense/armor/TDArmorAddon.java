@@ -1,10 +1,5 @@
 package lance5057.tDefense.armor;
 
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.blocks.GlowstoneCrumbs;
 import lance5057.tDefense.armor.blocks.UnstableBlock;
@@ -25,19 +20,27 @@ import lance5057.tDefense.armor.items.light.TinkersBoots;
 import lance5057.tDefense.armor.items.light.TinkersChausses;
 import lance5057.tDefense.armor.items.light.TinkersCoif;
 import lance5057.tDefense.armor.items.light.TinkersHauberk;
+
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
+
 import tconstruct.client.FlexibleToolRenderer;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.ToolBuilder;
 import tconstruct.library.tools.ToolCore;
 import tconstruct.tools.TinkerTools;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 public class TDArmorAddon {
+
     public static CreativeTabs tabName;
 
     public static ToolCore armor_TinkerHood;
@@ -66,14 +69,12 @@ public class TDArmorAddon {
 
             @Override
             public Item getTabIconItem() {
-                return ToolBuilder.instance
-                        .buildTool(
-                                new ItemStack(TinkerTools.largePlate, 1, 2),
-                                new ItemStack(TinkerTools.toughRod, 1, 2),
-                                new ItemStack(TinkersDefense.partArmorplate, 1, 2),
-                                new ItemStack(TinkersDefense.partChainmaille, 1, 2),
-                                "ArmorTab")
-                        .getItem();
+                return ToolBuilder.instance.buildTool(
+                        new ItemStack(TinkerTools.largePlate, 1, 2),
+                        new ItemStack(TinkerTools.toughRod, 1, 2),
+                        new ItemStack(TinkersDefense.partArmorplate, 1, 2),
+                        new ItemStack(TinkersDefense.partChainmaille, 1, 2),
+                        "ArmorTab").getItem();
             }
         };
 
@@ -171,31 +172,58 @@ public class TDArmorAddon {
                 TinkersDefense.partArmorplate,
                 TinkersDefense.partCloth);
         TConstructRegistry.addToolRecipe(
-                armor_TinkerGauntlets, TinkersDefense.partArmorplate, TinkerTools.toughRod, TinkersDefense.partRivet);
+                armor_TinkerGauntlets,
+                TinkersDefense.partArmorplate,
+                TinkerTools.toughRod,
+                TinkersDefense.partRivet);
 
         TConstructRegistry.addToolRecipe(
-                armor_TinkerRobe, TinkersDefense.partCloth, TinkersDefense.partClasp, TinkersDefense.partCloth);
+                armor_TinkerRobe,
+                TinkersDefense.partCloth,
+                TinkersDefense.partClasp,
+                TinkersDefense.partCloth);
         TConstructRegistry.addToolRecipe(
-                armor_TinkerShawl, TinkersDefense.partCloth, TinkersDefense.partArmorplate, TinkersDefense.partCloth);
+                armor_TinkerShawl,
+                TinkersDefense.partCloth,
+                TinkersDefense.partArmorplate,
+                TinkersDefense.partCloth);
         TConstructRegistry.addToolRecipe(
-                armor_TinkerHood, TinkersDefense.partCloth, TinkerTools.toolRod, TinkersDefense.partCloth);
+                armor_TinkerHood,
+                TinkersDefense.partCloth,
+                TinkerTools.toolRod,
+                TinkersDefense.partCloth);
         TConstructRegistry.addToolRecipe(
-                armor_TinkerShoes, TinkersDefense.partCloth, TinkersDefense.partRivet, TinkersDefense.partCloth);
+                armor_TinkerShoes,
+                TinkersDefense.partCloth,
+                TinkersDefense.partRivet,
+                TinkersDefense.partCloth);
 
         TConstructRegistry.addToolRecipe(
-                armor_TinkerCoif, TinkersDefense.partChainmaille, TinkerTools.toughRod, TinkersDefense.partCloth);
+                armor_TinkerCoif,
+                TinkersDefense.partChainmaille,
+                TinkerTools.toughRod,
+                TinkersDefense.partCloth);
         TConstructRegistry.addToolRecipe(
-                armor_TinkerHauberk, TinkersDefense.partChainmaille, TinkerTools.largePlate, TinkersDefense.partCloth);
+                armor_TinkerHauberk,
+                TinkersDefense.partChainmaille,
+                TinkerTools.largePlate,
+                TinkersDefense.partCloth);
         TConstructRegistry.addToolRecipe(
                 armor_TinkerChausses,
                 TinkersDefense.partChainmaille,
                 TinkersDefense.partArmorplate,
                 TinkersDefense.partCloth);
         TConstructRegistry.addToolRecipe(
-                armor_TinkerBoots, TinkersDefense.partChainmaille, TinkersDefense.partCloth, TinkersDefense.partRivet);
+                armor_TinkerBoots,
+                TinkersDefense.partChainmaille,
+                TinkersDefense.partCloth,
+                TinkersDefense.partRivet);
 
         TConstructRegistry.addToolRecipe(
-                accessory_sheath, TinkersDefense.partCloth, TinkersDefense.partCloth, TinkersDefense.partCloth);
+                accessory_sheath,
+                TinkersDefense.partCloth,
+                TinkersDefense.partCloth,
+                TinkersDefense.partCloth);
     }
 
     public void postInit(FMLPostInitializationEvent e) {}

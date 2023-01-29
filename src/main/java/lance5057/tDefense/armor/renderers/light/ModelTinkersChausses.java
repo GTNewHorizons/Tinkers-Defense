@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.light;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * ModelTinkersChausses - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * ModelTinkersChausses - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersChausses extends ArmorRenderer {
+
     public ModelRenderer FrontL;
     public ModelRenderer FrontR;
     public ModelRenderer HipGuardL;

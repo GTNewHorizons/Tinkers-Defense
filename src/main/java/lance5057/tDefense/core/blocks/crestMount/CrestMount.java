@@ -5,10 +5,10 @@ import static net.minecraftforge.common.util.ForgeDirection.NORTH;
 import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
 import static net.minecraftforge.common.util.ForgeDirection.WEST;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
+
 import lance5057.tDefense.TinkersDefense;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -21,7 +21,11 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class CrestMount extends BlockContainer {
+
     public CrestMount() {
         super(Material.iron);
         setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
@@ -34,8 +38,8 @@ public class CrestMount extends BlockContainer {
     }
 
     @Override
-    public boolean onBlockActivated(
-            World world, int x, int y, int z, EntityPlayer player, int metadata, float what, float these, float are) {
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int metadata, float what,
+            float these, float are) {
         final TileEntity tileEntity = world.getTileEntity(x, y, z);
         if (tileEntity == null || player.isSneaking()) return false;
         // code to open gui explained later
@@ -72,8 +76,7 @@ public class CrestMount extends BlockContainer {
                         new ItemStack(item.getItem(), item.stackSize, item.getItemDamage()));
 
                 if (item.hasTagCompound()) {
-                    entityItem.getEntityItem().setTagCompound((NBTTagCompound)
-                            item.getTagCompound().copy());
+                    entityItem.getEntityItem().setTagCompound((NBTTagCompound) item.getTagCompound().copy());
                 }
 
                 final float factor = 0.05F;
@@ -118,16 +121,8 @@ public class CrestMount extends BlockContainer {
     }
 
     @Override
-    public int onBlockPlaced(
-            World p_149660_1_,
-            int p_149660_2_,
-            int p_149660_3_,
-            int p_149660_4_,
-            int p_149660_5_,
-            float p_149660_6_,
-            float p_149660_7_,
-            float p_149660_8_,
-            int p_149660_9_) {
+    public int onBlockPlaced(World p_149660_1_, int p_149660_2_, int p_149660_3_, int p_149660_4_, int p_149660_5_,
+            float p_149660_6_, float p_149660_7_, float p_149660_8_, int p_149660_9_) {
         int j1 = p_149660_9_;
 
         if ((p_149660_9_ == 0 || p_149660_5_ == 2)

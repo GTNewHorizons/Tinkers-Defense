@@ -1,11 +1,7 @@
 package lance5057.tDefense.core.tools;
 
-import buildcraft.api.tools.IToolWrench;
-import cofh.api.block.IDismantleable;
-import cofh.api.item.IToolHammer;
-import cpw.mods.fml.common.Optional;
-import ic2.api.tile.IWrenchable;
 import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -15,15 +11,20 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+
 import tconstruct.library.tools.AbilityHelper;
 import tconstruct.library.tools.ToolCore;
 import tconstruct.tools.TinkerTools;
+import buildcraft.api.tools.IToolWrench;
+import cofh.api.block.IDismantleable;
+import cofh.api.item.IToolHammer;
+import cpw.mods.fml.common.Optional;
+import ic2.api.tile.IWrenchable;
 
-@Optional.InterfaceList({
-    @Optional.Interface(modid = "buildcraft", iface = "buildcraft.api.tools.IToolWrench"),
-    @Optional.Interface(modid = "cofh", iface = "cofh.api.item.IToolHammer")
-})
+@Optional.InterfaceList({ @Optional.Interface(modid = "buildcraft", iface = "buildcraft.api.tools.IToolWrench"),
+        @Optional.Interface(modid = "cofh", iface = "cofh.api.item.IToolHammer") })
 public class TinkerWrench extends ToolCore implements IToolWrench, IToolHammer {
+
     int induceDamage = 0;
 
     public TinkerWrench() {
@@ -100,8 +101,7 @@ public class TinkerWrench extends ToolCore implements IToolWrench, IToolHammer {
     @Override
     @Optional.Method(modid = "buildcraft")
     public boolean canWrench(EntityPlayer player, int x, int y, int z) {
-        final NBTTagCompound tags =
-                player.inventory.getCurrentItem().getTagCompound().getCompoundTag("InfiTool");
+        final NBTTagCompound tags = player.inventory.getCurrentItem().getTagCompound().getCompoundTag("InfiTool");
 
         if (!tags.getBoolean("Broken")) {
             return true;
@@ -131,36 +131,27 @@ public class TinkerWrench extends ToolCore implements IToolWrench, IToolHammer {
 
     }
 
-    //	//Skin Changer
-    //	@Override
-    //	public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase entity)
-    //	{
-    //		if(entity.worldObj.isRemote)
-    //		{
-    //			return false;
-    //		}
-    //		if(entity instanceof EntityAnimal)
-    //		{
-    //			EntityAnimal target = (EntityAnimal) entity;
-    //			player.openGui(TinkersDefense.instance, TinkersDefense.GUI_ANVIL_INV, player.worldObj, (int)player.posX,
+    // //Skin Changer
+    // @Override
+    // public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase entity)
+    // {
+    // if(entity.worldObj.isRemote)
+    // {
+    // return false;
+    // }
+    // if(entity instanceof EntityAnimal)
+    // {
+    // EntityAnimal target = (EntityAnimal) entity;
+    // player.openGui(TinkersDefense.instance, TinkersDefense.GUI_ANVIL_INV, player.worldObj, (int)player.posX,
     // (int)player.posY, (int)player.posZ);
-    //			return true;
-    //		}
-    //		return false;
-    //	}
+    // return true;
+    // }
+    // return false;
+    // }
 
     @Override
-    public boolean onItemUseFirst(
-            ItemStack stack,
-            EntityPlayer player,
-            World world,
-            int x,
-            int y,
-            int z,
-            int side,
-            float hitX,
-            float hitY,
-            float hitZ) {
+    public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side,
+            float hitX, float hitY, float hitZ) {
         final Block block = world.getBlock(x, y, z);
         final TileEntity te = world.getTileEntity(x, y, z);
         final int metaData = world.getBlockMetadata(x, y, z);
@@ -169,8 +160,8 @@ public class TinkerWrench extends ToolCore implements IToolWrench, IToolHammer {
             final IWrenchable wte = (IWrenchable) te;
 
             if (!player.isSneaking()) {
-                //				for(int step = 1; step < 6; step++)
-                //				{
+                // for(int step = 1; step < 6; step++)
+                // {
                 // side = (wte.getFacing() + 6 - step) % 6;
                 if (!world.isRemote) {
                     // side = side % -3;//(wte.getFacing() + step) % 6;
@@ -180,7 +171,7 @@ public class TinkerWrench extends ToolCore implements IToolWrench, IToolHammer {
                         return true;
                     }
                 }
-                //				}
+                // }
             } else {
                 if (!world.isRemote) {
                     final List<ItemStack> drops = block.getDrops(world, x, y, z, metaData, 0);
@@ -207,8 +198,7 @@ public class TinkerWrench extends ToolCore implements IToolWrench, IToolHammer {
         }
         if (world.blockExists(x, y, z)) {
             if (block != null) {
-                if (player.isSneaking()
-                        && block instanceof IDismantleable
+                if (player.isSneaking() && block instanceof IDismantleable
                         && ((IDismantleable) block).canDismantle(player, world, x, y, z)) {
                     if (!world.isRemote) {
                         ((IDismantleable) block).dismantleBlock(player, world, x, y, z, false);
@@ -223,6 +213,6 @@ public class TinkerWrench extends ToolCore implements IToolWrench, IToolHammer {
 
     @Override
     public String[] getTraits() {
-        return new String[] {"wrench"};
+        return new String[] { "wrench" };
     }
 }

@@ -1,14 +1,16 @@
 package lance5057.tDefense.core.liquids;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class MoltenFluid extends BlockFluidClassic {
+
     private IIcon stillIcon;
     private IIcon flowingIcon;
     private final String stillIconTexture;

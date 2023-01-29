@@ -1,17 +1,20 @@
 package lance5057.tDefense.armor.items.light;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.ArmorCore;
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
 import lance5057.tDefense.proxy.ClientProxy;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class TinkersBoots extends ArmorCore {
+
     public TinkersBoots() {
         super(1, 3);
         setUnlocalizedName("tinkersboots");
@@ -85,12 +88,12 @@ public class TinkersBoots extends ArmorCore {
         return "armor/boots";
     }
 
-    //	@Override
-    //	public void onUpdate(ItemStack stack, World world, Entity entity, int par4,
-    //			boolean par5) {
-    //		super.onUpdate(stack, world, entity, par4, par5);
+    // @Override
+    // public void onUpdate(ItemStack stack, World world, Entity entity, int par4,
+    // boolean par5) {
+    // super.onUpdate(stack, world, entity, par4, par5);
     //
-    //	}
+    // }
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -100,7 +103,7 @@ public class TinkersBoots extends ArmorCore {
 
     @Override
     public String[] getTraits() {
-        return new String[] {"armor", "feet", "boots", "lightarmor"};
+        return new String[] { "armor", "feet", "boots", "lightarmor" };
     }
 
     @Override

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileGetter extends SimpleFileVisitor<Path> {
+
     public final List<String> filenames = new ArrayList<String>();
 
     @Override

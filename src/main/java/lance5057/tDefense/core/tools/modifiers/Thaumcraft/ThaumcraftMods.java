@@ -1,15 +1,17 @@
 package lance5057.tDefense.core.tools.modifiers.Thaumcraft;
 
-import cpw.mods.fml.common.FMLLog;
 import java.lang.reflect.Method;
+
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
+
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.client.TConstructClientRegistry;
 import tconstruct.library.crafting.ModifyBuilder;
@@ -17,6 +19,7 @@ import tconstruct.library.tools.ToolCore;
 import thaumcraft.api.ItemApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import cpw.mods.fml.common.FMLLog;
 
 public class ThaumcraftMods extends ModifiersBase {
 
@@ -32,16 +35,17 @@ public class ThaumcraftMods extends ModifiersBase {
 
     @Override
     public void RegisterModifiers() {
-        ModifyBuilder.registerModifier(new modifierRepairVis(
-                new ItemStack[] {ItemApi.getItem("itemWandCap", 0)},
-                TinkersDefense.config.CapsModID,
-                "Caps",
-                EnumChatFormatting.GOLD.toString(),
-                "Caps"));
+        ModifyBuilder.registerModifier(
+                new modifierRepairVis(
+                        new ItemStack[] { ItemApi.getItem("itemWandCap", 0) },
+                        TinkersDefense.config.CapsModID,
+                        "Caps",
+                        EnumChatFormatting.GOLD.toString(),
+                        "Caps"));
 
         for (final ToolCore tool : TConstructRegistry.getToolMapping()) {
-            TConstructClientRegistry.addEffectRenderMapping(
-                    tool, TinkersDefense.config.CapsModID, "tinker", "cap", true);
+            TConstructClientRegistry
+                    .addEffectRenderMapping(tool, TinkersDefense.config.CapsModID, "tinker", "cap", true);
         }
     }
 

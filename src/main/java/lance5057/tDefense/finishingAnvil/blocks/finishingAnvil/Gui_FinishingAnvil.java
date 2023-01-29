@@ -1,15 +1,15 @@
 package lance5057.tDefense.finishingAnvil.blocks.finishingAnvil;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.client.config.GuiButtonExt;
 import java.util.ArrayList;
 import java.util.List;
+
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.ArmorCore;
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
 import lance5057.tDefense.core.network.Message_FinishingAnvil;
 import lance5057.tDefense.finishingAnvil.utilities.Injector;
 import lance5057.tDefense.finishingAnvil.utilities.ToolCoreTip;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.ScaledResolution;
@@ -22,13 +22,18 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
+
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import org.lwjgl.util.glu.Project;
+
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.tools.ToolCore;
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.client.config.GuiButtonExt;
 
 public class Gui_FinishingAnvil extends GuiContainer {
+
     private ItemStack bigCopy;
     NBTTagCompound bigCopyTags;
     private final RenderItem bigRender = new RenderItem_FinishingAnvil(this, 3.5f, 3.5f, 1.0f);
@@ -50,8 +55,9 @@ public class Gui_FinishingAnvil extends GuiContainer {
 
     InventoryPlayer player;
 
-    private static final ResourceLocation iconLocation =
-            new ResourceLocation("tinkersdefense", "textures/gui/finishinganvil.png");
+    private static final ResourceLocation iconLocation = new ResourceLocation(
+            "tinkersdefense",
+            "textures/gui/finishinganvil.png");
 
     public Gui_FinishingAnvil(InventoryPlayer invPlayer, TileEntity_FinishingAnvil te) {
         super(new Container_FinishingAnvil(invPlayer, te));
@@ -195,8 +201,7 @@ public class Gui_FinishingAnvil extends GuiContainer {
                                     + ((rightButtonPos + 1) * TinkersDefense.config.MaterialIndex));
                     bigCopyTags.setInteger(
                             renders[leftSelect] + "Color",
-                            TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect]))
-                                    .primaryColor());
+                            TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect])).primaryColor());
                 }
                 break;
 
@@ -208,8 +213,7 @@ public class Gui_FinishingAnvil extends GuiContainer {
                                     + ((rightButtonPos + 2) * TinkersDefense.config.MaterialIndex));
                     bigCopyTags.setInteger(
                             renders[leftSelect] + "Color",
-                            TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect]))
-                                    .primaryColor());
+                            TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect])).primaryColor());
                 }
                 break;
 
@@ -293,8 +297,8 @@ public class Gui_FinishingAnvil extends GuiContainer {
                 setRenders();
             } else if (bigCopy != null && inventory.getStackInSlot(0).getItem() != bigCopy.getItem()
                     || inventory.getStackInSlot(0).getItemDamage() != bigCopy.getItemDamage()) {
-                bigCopy = null;
-            }
+                        bigCopy = null;
+                    }
         } else if (inventory.getStackInSlot(0) == null) {
             bigCopy = null;
         }
@@ -336,12 +340,12 @@ public class Gui_FinishingAnvil extends GuiContainer {
                     ((GuiButtonExt) buttonList.get(15)).enabled = false;
                     ((GuiButtonExt) buttonList.get(12)).displayString = "3D";
 
-                    normalRender.renderItemAndEffectIntoGUI(
-                            fontRendererObj, mc.getTextureManager(), rightCopy1, 153, 13);
-                    normalRender.renderItemAndEffectIntoGUI(
-                            fontRendererObj, mc.getTextureManager(), rightCopy2, 153, 33);
-                    normalRender.renderItemAndEffectIntoGUI(
-                            fontRendererObj, mc.getTextureManager(), rightCopy3, 153, 53);
+                    normalRender
+                            .renderItemAndEffectIntoGUI(fontRendererObj, mc.getTextureManager(), rightCopy1, 153, 13);
+                    normalRender
+                            .renderItemAndEffectIntoGUI(fontRendererObj, mc.getTextureManager(), rightCopy2, 153, 33);
+                    normalRender
+                            .renderItemAndEffectIntoGUI(fontRendererObj, mc.getTextureManager(), rightCopy3, 153, 53);
                 }
             } else {
                 final NBTTagCompound aTags = bigCopy.getTagCompound().getCompoundTag("ArmorRenderer");
@@ -448,14 +452,14 @@ public class Gui_FinishingAnvil extends GuiContainer {
                             Minecraft.getMinecraft().thePlayer.getLocationSkin().toString());
 
                     FMLClientHandler.instance().getClient().renderEngine.bindTexture(rc);
-                    //					final ITextureObject tex =
+                    // final ITextureObject tex =
                     // FMLClientHandler.instance().getClient().getTextureManager().getTexture(rc);
-                    //					if(tex.getGlTextureId() == 1)
-                    //					{
-                    //						rc = new ResourceLocation(
-                    //								"minecraft:textures/entity/steve.png");
-                    //						FMLClientHandler.instance().getClient().renderEngine.bindTexture(rc);
-                    //					}
+                    // if(tex.getGlTextureId() == 1)
+                    // {
+                    // rc = new ResourceLocation(
+                    // "minecraft:textures/entity/steve.png");
+                    // FMLClientHandler.instance().getClient().renderEngine.bindTexture(rc);
+                    // }
 
                     biped.isChild = false;
                     biped.render(player.player, limbSwing, limbs, player.player.ticksExisted, 0, 0, 0.0625f);
@@ -478,12 +482,11 @@ public class Gui_FinishingAnvil extends GuiContainer {
     }
 
     protected void drawTooltip(int x, int y) {
-        final int buttons[] = {4, 5, 6, 9, 10, 11};
+        final int buttons[] = { 4, 5, 6, 9, 10, 11 };
 
         for (int i = 0; i < buttons.length; i++) {
             final GuiButtonExt button = ((GuiButtonExt) buttonList.get(buttons[i] - 1));
-            final boolean mousehover = x >= button.xPosition
-                    && y >= button.yPosition
+            final boolean mousehover = x >= button.xPosition && y >= button.yPosition
                     && x < button.xPosition + button.width
                     && y < button.yPosition + button.height;
             final int test = button.getHoverState(mousehover);
@@ -515,11 +518,9 @@ public class Gui_FinishingAnvil extends GuiContainer {
                     func_146283_a(list, x, y);
                 } else if (bigCopy != null && bigCopy.getItem() instanceof ToolCore) {
                     final ToolCore tool = (ToolCore) bigCopy.getItem();
-                    final String toolName = tool.getUnlocalizedName()
-                            .toLowerCase()
-                            .substring(
-                                    tool.getUnlocalizedName().lastIndexOf('.') + 1,
-                                    tool.getUnlocalizedName().length());
+                    final String toolName = tool.getUnlocalizedName().toLowerCase().substring(
+                            tool.getUnlocalizedName().lastIndexOf('.') + 1,
+                            tool.getUnlocalizedName().length());
                     final ToolCoreTip tt = ((Injector) TinkersDefense.tcInject).tools.get(toolName);
 
                     if (tt != null) {
@@ -567,8 +568,7 @@ public class Gui_FinishingAnvil extends GuiContainer {
                         + ((rightButtonPos) * TinkersDefense.config.MaterialIndex));
         rightCopyTags1.setInteger(
                 renders[leftSelect] + "Color",
-                TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect]))
-                        .primaryColor());
+                TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect])).primaryColor());
         rightCopy1.getTagCompound().setTag("InfiTool", rightCopyTags1);
 
         rightCopy2 = bigCopy.copy();
@@ -579,8 +579,7 @@ public class Gui_FinishingAnvil extends GuiContainer {
                         + ((rightButtonPos + 1) * TinkersDefense.config.MaterialIndex));
         rightCopyTags2.setInteger(
                 renders[leftSelect] + "Color",
-                TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect]))
-                        .primaryColor());
+                TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect])).primaryColor());
         rightCopy2.getTagCompound().setTag("InfiTool", rightCopyTags2);
 
         rightCopy3 = bigCopy.copy();
@@ -591,8 +590,7 @@ public class Gui_FinishingAnvil extends GuiContainer {
                         + ((rightButtonPos + 2) * TinkersDefense.config.MaterialIndex));
         rightCopyTags3.setInteger(
                 renders[leftSelect] + "Color",
-                TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect]))
-                        .primaryColor());
+                TConstructRegistry.getMaterial(bigCopyTags.getInteger(renders[leftSelect])).primaryColor());
         rightCopy3.getTagCompound().setTag("InfiTool", rightCopyTags3);
     }
 }

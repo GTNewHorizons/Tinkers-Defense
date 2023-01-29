@@ -4,6 +4,7 @@ import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import io.netty.buffer.ByteBuf;
 
 public class Message_CrestMount implements IMessage {
+
     public int x, y, z;
     public boolean[] flip = new boolean[4];
 

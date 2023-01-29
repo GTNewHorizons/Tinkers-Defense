@@ -3,6 +3,7 @@ package lance5057.tDefense;
 import cpw.mods.fml.common.Loader;
 
 public final class TDIntegration {
+
     public static boolean mineAndBlade = false;
     public static boolean thaumcraft = false;
     public static boolean botania = false;

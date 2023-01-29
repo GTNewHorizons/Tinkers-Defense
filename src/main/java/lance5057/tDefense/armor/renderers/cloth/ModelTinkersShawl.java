@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.cloth;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * ModelTinkersShawl - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * ModelTinkersShawl - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersShawl extends ArmorRenderer {
+
     public ModelRenderer Button;
     public ModelRenderer Zipper;
     public ModelRenderer ArmTrimL;

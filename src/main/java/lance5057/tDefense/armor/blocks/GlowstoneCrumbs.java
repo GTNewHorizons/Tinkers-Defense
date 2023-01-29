@@ -1,7 +1,9 @@
 package lance5057.tDefense.armor.blocks;
 
 import java.util.Random;
+
 import lance5057.tDefense.Reference;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -9,6 +11,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
 public class GlowstoneCrumbs extends Block {
+
     public GlowstoneCrumbs() {
         super(Material.ground);
         setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
@@ -22,13 +25,13 @@ public class GlowstoneCrumbs extends Block {
      * cleared to be reused)
      */
     @Override
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(
-            World p_149668_1_, int p_149668_2_, int p_149668_3_, int p_149668_4_) {
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int p_149668_2_, int p_149668_3_,
+            int p_149668_4_) {
         return null;
     }
 
     /**
-     * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
+     * Is this block (a) opaque and (b) a full 1m cube? This determines whether or not to render the shared face of two
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
      */
     @Override
@@ -71,8 +74,8 @@ public class GlowstoneCrumbs extends Block {
      * their own) Args: x, y, z, neighbor Block
      */
     @Override
-    public void onNeighborBlockChange(
-            World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_) {
+    public void onNeighborBlockChange(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_,
+            Block p_149695_5_) {
         super.onNeighborBlockChange(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_, p_149695_5_);
         checkAndDropBlock(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_);
     }
@@ -95,15 +98,13 @@ public class GlowstoneCrumbs extends Block {
     }
 
     /**
-     * Can this block stay at this position.  Similar to canPlaceBlockAt except gets checked often with plants.
+     * Can this block stay at this position. Similar to canPlaceBlockAt except gets checked often with plants.
      */
     @Override
     public boolean canBlockStay(World p_149718_1_, int p_149718_2_, int p_149718_3_, int p_149718_4_) {
-        return p_149718_1_
-                        .getBlock(p_149718_2_, p_149718_3_ - 1, p_149718_4_)
-                        .isNormalCube(p_149718_1_, p_149718_2_, p_149718_3_ - 1, p_149718_4_)
-                && !p_149718_1_
-                        .getBlock(p_149718_2_, p_149718_3_ - 1, p_149718_4_)
+        return p_149718_1_.getBlock(p_149718_2_, p_149718_3_ - 1, p_149718_4_)
+                .isNormalCube(p_149718_1_, p_149718_2_, p_149718_3_ - 1, p_149718_4_)
+                && !p_149718_1_.getBlock(p_149718_2_, p_149718_3_ - 1, p_149718_4_)
                         .isAir(p_149718_1_, p_149718_2_, p_149718_3_ - 1, p_149718_4_);
     }
 }

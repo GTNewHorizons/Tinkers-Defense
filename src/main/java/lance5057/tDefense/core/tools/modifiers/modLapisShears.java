@@ -2,9 +2,11 @@ package lance5057.tDefense.core.tools.modifiers;
 
 import java.util.Arrays;
 import java.util.List;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
 import tconstruct.library.tools.ToolCore;
 import tconstruct.modifiers.tools.ModLapis;
 
@@ -22,7 +24,7 @@ public class modLapisShears extends ModLapis {
 
             final String modName = "\u00a79Lapis (0/450)";
             final int tooltipIndex = addToolTip(tool, "\u00a79Luck", modName);
-            final int[] keyPair = new int[] {0, tooltipIndex};
+            final int[] keyPair = new int[] { 0, tooltipIndex };
             tags.setIntArray(key, keyPair);
 
             int modifiers = tags.getInteger("Modifiers");

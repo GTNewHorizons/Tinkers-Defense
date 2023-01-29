@@ -1,15 +1,17 @@
 package lance5057.tDefense.armor.items;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.ArmorCore;
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
 import lance5057.tDefense.proxy.ClientProxy;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
 import tconstruct.library.accessory.IAccessory;
 import tconstruct.tools.TinkerTools;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class Sheath extends ArmorCore implements IAccessory {
 
@@ -37,11 +39,11 @@ public class Sheath extends ArmorCore implements IAccessory {
         return TinkersDefense.partCloth;
     }
 
-    //	@Override
-    //	public Item getExtraItem()
-    //	{
-    //		return TinkersDefense.partCloth;
-    //	}
+    // @Override
+    // public Item getExtraItem()
+    // {
+    // return TinkersDefense.partCloth;
+    // }
 
     @Override
     public String getDefaultFolder() {
@@ -71,8 +73,8 @@ public class Sheath extends ArmorCore implements IAccessory {
                 return "_tabard_trim";
             case 3:
                 return "_tabard_filigree";
-                //			case 4:
-                //				return "_sheath_clasp";
+            // case 4:
+            // return "_sheath_clasp";
             default:
                 return "";
         }
@@ -80,7 +82,7 @@ public class Sheath extends ArmorCore implements IAccessory {
 
     @Override
     public String[] getTraits() {
-        return new String[] {"sheath", "cosmetic"};
+        return new String[] { "sheath", "cosmetic" };
     }
 
     @Override

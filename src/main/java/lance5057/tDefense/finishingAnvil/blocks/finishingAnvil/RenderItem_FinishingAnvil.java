@@ -6,9 +6,11 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+
 import org.lwjgl.opengl.GL11;
 
 public class RenderItem_FinishingAnvil extends RenderItem {
+
     private final Gui_FinishingAnvil anvilGui;
     float sx;
     float sy;
@@ -23,8 +25,8 @@ public class RenderItem_FinishingAnvil extends RenderItem {
     }
 
     @Override
-    public void renderItemAndEffectIntoGUI(
-            FontRenderer fontRenderer, TextureManager textureManager, ItemStack itemStack, int x, int y) {
+    public void renderItemAndEffectIntoGUI(FontRenderer fontRenderer, TextureManager textureManager,
+            ItemStack itemStack, int x, int y) {
         if (itemStack == null) return;
 
         RenderHelper.enableGUIStandardItemLighting();

@@ -1,6 +1,7 @@
 package lance5057.tDefense.armor.parts;
 
 import net.minecraft.item.ItemStack;
+
 import tconstruct.library.tools.CustomMaterial;
 
 public class ClothMaterial extends CustomMaterial {

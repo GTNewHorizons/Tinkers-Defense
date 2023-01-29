@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.light;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * ModelTinkersHauberk - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * ModelTinkersHauberk - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersHauberk extends ArmorRenderer {
+
     public ModelRenderer ChestBeltR;
     public ModelRenderer ChestBelt;
     public ModelRenderer ChestBeltR_1;

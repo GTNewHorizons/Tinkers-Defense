@@ -2,18 +2,21 @@ package lance5057.tDefense.armor.modifiers;
 
 import java.util.Arrays;
 import java.util.List;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
 import tconstruct.library.tools.ToolCore;
 import tconstruct.modifiers.tools.ModInteger;
 
 public class modifierProtection extends ModInteger {
+
     String color;
     String type;
     String tooltipName = "";
     int initialIncrease;
     int secondaryIncrease;
-    String[] types = {"Protection", "Fire Protection", "Blast Protection", "Projectile Protection", "Featherfall"};
+    String[] types = { "Protection", "Fire Protection", "Blast Protection", "Projectile Protection", "Featherfall" };
 
     public modifierProtection(ItemStack[] items, int effect, int increase, String c, String t) {
         super(items, effect, t, increase, c, t);

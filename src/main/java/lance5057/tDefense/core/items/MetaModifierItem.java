@@ -1,7 +1,9 @@
 package lance5057.tDefense.core.items;
 
 import java.util.List;
+
 import lance5057.tDefense.Reference;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -9,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
 public class MetaModifierItem extends Item {
+
     public IIcon[] icons;
     public String[] names;
     int metaAmount;

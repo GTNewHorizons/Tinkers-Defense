@@ -1,10 +1,8 @@
 package lance5057.tDefense.armor.events;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.ArmorCore;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -12,9 +10,14 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+
 import tconstruct.library.event.ToolCraftEvent.NormalTool;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ArmorModEvents {
+
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public void ToolCraftedEvent(NormalTool event) {
@@ -23,14 +26,14 @@ public class ArmorModEvents {
             final NBTTagCompound tooltags = event.toolTag;
             final NBTTagCompound tags = armor.getRenderer().defaultTags; // stack.setTagCompound();
 
-            //			for(int i = 0; i < render.defaultTags.; i++)
-            //			{
-            //				final String rendertag = ((ModelRenderer) render.boxList.get(i)).boxName;
-            //				if(rendertag != null)
-            //				{
-            //					tags.setBoolean(rendertag, ((ModelRenderer) render.boxList.get(i)).isHidden);
-            //				}
-            //			}
+            // for(int i = 0; i < render.defaultTags.; i++)
+            // {
+            // final String rendertag = ((ModelRenderer) render.boxList.get(i)).boxName;
+            // if(rendertag != null)
+            // {
+            // tags.setBoolean(rendertag, ((ModelRenderer) render.boxList.get(i)).isHidden);
+            // }
+            // }
 
             if (!tags.hasNoTags()) {
                 tooltags.setTag("ArmorRenderer", tags);
@@ -43,9 +46,8 @@ public class ArmorModEvents {
         int epf = 0;
 
         if (TinkersDefense.config.debug && event.entityLiving instanceof EntityPlayer) {
-            ((EntityPlayer) event.entityLiving)
-                    .addChatComponentMessage(new ChatComponentText(
-                            event.source.getDamageType() + " - Max: " + Double.toString(event.ammount)));
+            ((EntityPlayer) event.entityLiving).addChatComponentMessage(
+                    new ChatComponentText(event.source.getDamageType() + " - Max: " + Double.toString(event.ammount)));
         }
 
         for (int i = 0; i < 4; i++) {
@@ -65,8 +67,8 @@ public class ArmorModEvents {
                     }
                 } else if (tags.hasKey("Featherfall")
                         && event.source.getDamageType() == DamageSource.fall.getDamageType()) {
-                    epf += (calcModifierDamage(tags.getInteger("Featherfall"), 3f, event.source));
-                }
+                            epf += (calcModifierDamage(tags.getInteger("Featherfall"), 3f, event.source));
+                        }
             }
         }
 
@@ -78,8 +80,8 @@ public class ArmorModEvents {
         event.ammount = adjustedPerc * event.ammount;
 
         if (TinkersDefense.config.debug && event.entityLiving instanceof EntityPlayer) {
-            ((EntityPlayer) event.entityLiving)
-                    .addChatComponentMessage(new ChatComponentText(
+            ((EntityPlayer) event.entityLiving).addChatComponentMessage(
+                    new ChatComponentText(
                             event.source.getDamageType() + " - Adjusted: " + Double.toString(event.ammount)));
         }
     }

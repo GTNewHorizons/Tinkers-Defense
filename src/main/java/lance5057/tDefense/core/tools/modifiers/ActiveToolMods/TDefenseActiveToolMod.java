@@ -1,14 +1,17 @@
 package lance5057.tDefense.core.tools.modifiers.ActiveToolMods;
 
 import lance5057.tDefense.core.tools.modifiers.Modifiers;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+
 import tconstruct.library.ActiveToolMod;
 import tconstruct.library.tools.ToolCore;
 
 public class TDefenseActiveToolMod extends ActiveToolMod {
+
     Modifiers mods = new Modifiers();
 
     // BotaniaToolMods FlowerMods = new BotaniaToolMods();

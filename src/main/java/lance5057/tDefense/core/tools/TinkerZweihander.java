@@ -1,7 +1,7 @@
 package lance5057.tDefense.core.tools;
 
-import cpw.mods.fml.common.Optional;
 import java.util.List;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,13 +11,14 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+
 import tconstruct.library.tools.AbilityHelper;
 import tconstruct.library.tools.Weapon;
 import tconstruct.tools.TinkerTools;
+import cpw.mods.fml.common.Optional;
 
 @Optional.InterfaceList({
-    @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.weapons.IBattlegearWeapon"),
-})
+        @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.weapons.IBattlegearWeapon"), })
 public class TinkerZweihander extends Weapon {
 
     public TinkerZweihander(int baseDamage) {
@@ -133,20 +134,20 @@ public class TinkerZweihander extends Weapon {
         return "zweihander";
     }
 
-    //	@Override
-    //	@SideOnly(Side.CLIENT)
-    //	public void onUpdate(ItemStack stack, World world, Entity entity, int par4,
-    //			boolean par5) {
-    //		super.onUpdate(stack, world, entity, par4, par5);
-    //		if (entity instanceof EntityPlayerSP) {
-    //			EntityPlayerSP player = (EntityPlayerSP) entity;
-    //			ItemStack usingItem = player.inventory.getCurrentItem();
-    //			if (usingItem != null && usingItem.getItem() == this) {
-    //				player.addPotionEffect(new PotionEffect(Potion.resistance.getId(),2,1));
+    // @Override
+    // @SideOnly(Side.CLIENT)
+    // public void onUpdate(ItemStack stack, World world, Entity entity, int par4,
+    // boolean par5) {
+    // super.onUpdate(stack, world, entity, par4, par5);
+    // if (entity instanceof EntityPlayerSP) {
+    // EntityPlayerSP player = (EntityPlayerSP) entity;
+    // ItemStack usingItem = player.inventory.getCurrentItem();
+    // if (usingItem != null && usingItem.getItem() == this) {
+    // player.addPotionEffect(new PotionEffect(Potion.resistance.getId(),2,1));
     //
-    //			}
-    //		}
-    //	}
+    // }
+    // }
+    // }
 
     @Override
     @Optional.Method(modid = "battlegear2")

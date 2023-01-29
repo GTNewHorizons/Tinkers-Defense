@@ -1,6 +1,5 @@
 package lance5057.tDefense.proxy;
 
-import cpw.mods.fml.client.registry.ClientRegistry;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.TDArmorAddon;
 import lance5057.tDefense.armor.renderers.ModelTinkersGauntlets;
@@ -25,12 +24,15 @@ import lance5057.tDefense.core.renderer.MoreFlexibleToolRenderer;
 import lance5057.tDefense.core.tools.modifiers.ModifierSoulHandler;
 import lance5057.tDefense.finishingAnvil.blocks.finishingAnvil.Renderer_FinishingAnvil;
 import lance5057.tDefense.finishingAnvil.blocks.finishingAnvil.TileEntity_FinishingAnvil;
+
 import net.minecraftforge.client.MinecraftForgeClient;
+
 import tconstruct.client.FlexibleToolRenderer;
+import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy {
     // public static final ModelSheath sheath = new ModelSheath();
-    // ModifierSoulHandler						SoulHandler;
+    // ModifierSoulHandler SoulHandler;
 
     public static ModelTinkersTabard sheath;
 
@@ -72,18 +74,20 @@ public class ClientProxy extends CommonProxy {
         chausses = new ModelTinkersChausses();
         boots = new ModelTinkersBoots();
 
-        //		final FlexibleToolRenderer renderer = new FlexibleToolRenderer();
-        //		final FlexibleToolRenderer bigrenderer = new MoreFlexibleToolRenderer(2);
-        //		final FlexibleToolRenderer smallrenderer = new MoreFlexibleToolRenderer(
-        //				1.0f);
+        // final FlexibleToolRenderer renderer = new FlexibleToolRenderer();
+        // final FlexibleToolRenderer bigrenderer = new MoreFlexibleToolRenderer(2);
+        // final FlexibleToolRenderer smallrenderer = new MoreFlexibleToolRenderer(
+        // 1.0f);
         MinecraftForgeClient.registerItemRenderer(
-                TinkersDefense.tool_roundShield, new MoreFlexibleToolRenderer(0.75f, 0.0f, 0.2f, 0f));
+                TinkersDefense.tool_roundShield,
+                new MoreFlexibleToolRenderer(0.75f, 0.0f, 0.2f, 0f));
         MinecraftForgeClient.registerItemRenderer(TinkersDefense.tool_heaterShield, new FlexibleToolRenderer());
         MinecraftForgeClient.registerItemRenderer(TinkersDefense.tool_wrench, new FlexibleToolRenderer());
         MinecraftForgeClient.registerItemRenderer(TinkersDefense.tool_shears, new FlexibleToolRenderer());
         // MinecraftForgeClient.registerItemRenderer(TinkersDefense.tool_hookshot, renderer);
         MinecraftForgeClient.registerItemRenderer(
-                TinkersDefense.tool_zweihander, new MoreFlexibleToolRenderer(1.5f, -0.325f, -0.025f, 0f));
+                TinkersDefense.tool_zweihander,
+                new MoreFlexibleToolRenderer(1.5f, -0.325f, -0.025f, 0f));
         // MinecraftForgeClient.registerItemRenderer(TinkersDefense.tool_hookshot, renderer);
 
         // RenderingRegistry.registerEntityRenderingHandler(EntityHookshotHook.class, new HookRenderer());
@@ -96,14 +100,14 @@ public class ClientProxy extends CommonProxy {
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntity_FinishingAnvil.class, new Renderer_FinishingAnvil());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntity_JewelersBench.class, new Renderer_JewelersBench());
 
-        //		MinecraftForgeClient.registerItemRenderer(new ItemBlock(
-        //				TinkersDefense.block_ArmorAnvil), new CustomModelItemRenderer(
-        //				new Renderer_FinishingAnvil(), new TileEntity_FinishingAnvil()));
-        //		MinecraftForgeClient.registerItemRenderer(new ItemBlock(
-        //				TinkersDefense.block_CrestMount), new CustomModelItemRenderer(
-        //				new Renderer_CrestMount(), new TileEntity_CrestMount()));
-        //		MinecraftForgeClient.registerItemRenderer(new ItemBlock(
-        //				TinkersDefense.block_JewelersBench), new CustomModelItemRenderer(
-        //				new Renderer_JewelersBench(), new TileEntity_JewelersBench()));
+        // MinecraftForgeClient.registerItemRenderer(new ItemBlock(
+        // TinkersDefense.block_ArmorAnvil), new CustomModelItemRenderer(
+        // new Renderer_FinishingAnvil(), new TileEntity_FinishingAnvil()));
+        // MinecraftForgeClient.registerItemRenderer(new ItemBlock(
+        // TinkersDefense.block_CrestMount), new CustomModelItemRenderer(
+        // new Renderer_CrestMount(), new TileEntity_CrestMount()));
+        // MinecraftForgeClient.registerItemRenderer(new ItemBlock(
+        // TinkersDefense.block_JewelersBench), new CustomModelItemRenderer(
+        // new Renderer_JewelersBench(), new TileEntity_JewelersBench()));
     }
 }

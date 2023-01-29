@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.cloth;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * ModelBiped - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * ModelBiped - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersRobe extends ArmorRenderer {
+
     public ModelRenderer LeftFrontL;
     public ModelRenderer LeftBackL;
     public ModelRenderer CenterBackL;
@@ -46,7 +47,7 @@ public class ModelTinkersRobe extends ArmorRenderer {
     public ModelRenderer BeltStraight;
     public ModelRenderer BeltRHip;
 
-    // public ModelRenderer	BeltStraightSmall;
+    // public ModelRenderer BeltStraightSmall;
 
     public ModelTinkersRobe() {
         super(0.1f, 0, 64, 64);

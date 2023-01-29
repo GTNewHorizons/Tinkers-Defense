@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.light;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * ModelBiped - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * ModelBiped - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersCoif extends ArmorRenderer {
+
     public ModelRenderer Coif;
     public ModelRenderer WingR;
     public ModelRenderer Mask;

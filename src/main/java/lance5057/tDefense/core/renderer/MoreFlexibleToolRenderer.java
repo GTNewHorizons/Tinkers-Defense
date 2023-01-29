@@ -7,13 +7,16 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
+
 import tconstruct.TConstruct;
 import tconstruct.client.FlexibleToolRenderer;
 import tconstruct.library.tools.ToolCore;
 
 public class MoreFlexibleToolRenderer extends FlexibleToolRenderer {
+
     private float scale = 1f;
     private final float x, y, z;
     public float depth = 1 / 32f;
@@ -278,20 +281,19 @@ public class MoreFlexibleToolRenderer extends FlexibleToolRenderer {
         final ToolCore tool = (ToolCore) item.getItem();
 
         final IIcon[] tempParts = new IIcon[iconParts];
-        label:
-        {
+        label: {
             if (!isInventory && ent instanceof EntityPlayer) {
                 final EntityPlayer player = (EntityPlayer) ent;
                 final ItemStack itemInUse = player.getItemInUse();
                 if (itemInUse != null) {
                     final int useCount = player.getItemInUseCount();
-                    for (int i = iconParts; i-- > 0; ) {
+                    for (int i = iconParts; i-- > 0;) {
                         tempParts[i] = tool.getIcon(item, i, player, itemInUse, useCount);
                     }
                     break label;
                 }
             }
-            for (int i = iconParts; i-- > 0; ) {
+            for (int i = iconParts; i-- > 0;) {
                 tempParts[i] = tool.getIcon(item, i);
             }
         }

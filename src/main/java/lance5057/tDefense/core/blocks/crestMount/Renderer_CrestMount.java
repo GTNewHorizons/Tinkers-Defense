@@ -8,10 +8,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+
 import org.lwjgl.opengl.GL11;
+
 import tconstruct.library.tools.ToolCore;
 
 public class Renderer_CrestMount extends TileEntitySpecialRenderer {
+
     // private RenderItem itemRenderer;
     private final ModelCrestMount model;
     EntityItem entItem = null;
@@ -80,9 +83,7 @@ public class Renderer_CrestMount extends TileEntitySpecialRenderer {
         // right slot
         int slot = 1;
         if (tileEntity.getStackInSlot(slot) != null) {
-            if ((entItem == null)
-                    || entItem.getEntityItem().getItem()
-                            != tileEntity.getStackInSlot(slot).getItem()) {
+            if ((entItem == null) || entItem.getEntityItem().getItem() != tileEntity.getStackInSlot(slot).getItem()) {
                 entItem = new EntityItem(tileEntity.getWorldObj(), 0, 0, 0, tileEntity.getStackInSlot(slot));
             }
             GL11.glPushMatrix();
@@ -102,8 +103,8 @@ public class Renderer_CrestMount extends TileEntitySpecialRenderer {
                 GL11.glTranslatef(-0.505f, -0.32f, 0);
             }
 
-            RenderManager.instance.renderEntityWithPosYaw(
-                    entItem, 0.4f /*up - down*/, -0.3f /*left - right*/, 0.23f, 0, 0);
+            RenderManager.instance
+                    .renderEntityWithPosYaw(entItem, 0.4f /* up - down */, -0.3f /* left - right */, 0.23f, 0, 0);
             RenderItem.renderInFrame = false;
             GL11.glPopMatrix();
         }
@@ -111,9 +112,7 @@ public class Renderer_CrestMount extends TileEntitySpecialRenderer {
         // left slot
         slot = 0;
         if (tileEntity.getStackInSlot(slot) != null) {
-            if ((entItem2 == null)
-                    || entItem2.getEntityItem().getItem()
-                            != tileEntity.getStackInSlot(slot).getItem()) {
+            if ((entItem2 == null) || entItem2.getEntityItem().getItem() != tileEntity.getStackInSlot(slot).getItem()) {
                 entItem2 = new EntityItem(tileEntity.getWorldObj(), x, y, z, tileEntity.getStackInSlot(slot));
             }
             GL11.glPushMatrix();
@@ -141,9 +140,7 @@ public class Renderer_CrestMount extends TileEntitySpecialRenderer {
         // middle slot
         slot = 2;
         if (tileEntity.getStackInSlot(slot) != null) {
-            if ((entItem3 == null)
-                    || entItem3.getEntityItem().getItem()
-                            != tileEntity.getStackInSlot(slot).getItem()) {
+            if ((entItem3 == null) || entItem3.getEntityItem().getItem() != tileEntity.getStackInSlot(slot).getItem()) {
                 entItem3 = new EntityItem(tileEntity.getWorldObj(), x, y, z, tileEntity.getStackInSlot(slot));
             }
             GL11.glPushMatrix();
@@ -176,9 +173,7 @@ public class Renderer_CrestMount extends TileEntitySpecialRenderer {
         // shield slot
         slot = 3;
         if (tileEntity.getStackInSlot(slot) != null) {
-            if ((entItem4 == null)
-                    || entItem4.getEntityItem().getItem()
-                            != tileEntity.getStackInSlot(slot).getItem()) {
+            if ((entItem4 == null) || entItem4.getEntityItem().getItem() != tileEntity.getStackInSlot(slot).getItem()) {
                 entItem4 = new EntityItem(tileEntity.getWorldObj(), x, y, z, tileEntity.getStackInSlot(slot));
             }
             GL11.glPushMatrix();

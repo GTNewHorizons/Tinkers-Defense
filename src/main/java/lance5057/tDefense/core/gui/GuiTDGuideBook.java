@@ -1,11 +1,11 @@
 package lance5057.tDefense.core.gui;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import lance5057.tDefense.TinkersDefense;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
@@ -23,23 +23,30 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+
 import org.lwjgl.opengl.GL11;
+
 import tconstruct.library.crafting.ToolBuilder;
 import tconstruct.library.tools.DynamicToolPart;
 import tconstruct.tools.TinkerTools;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class GuiTDGuideBook extends GuiScreen {
+
     static RenderItem itemRender = new RenderItem();
     List<Chapter> chapters = new ArrayList<Chapter>();
 
     private int chapter = 0;
     private int page = 0;
 
-    private static final ResourceLocation guiLocation =
-            new ResourceLocation("tinkersdefense", "textures/gui/guide.png");
+    private static final ResourceLocation guiLocation = new ResourceLocation(
+            "tinkersdefense",
+            "textures/gui/guide.png");
 
-    private static final ResourceLocation guiLocation2 =
-            new ResourceLocation("tinkersdefense", "textures/gui/guide2.png");
+    private static final ResourceLocation guiLocation2 = new ResourceLocation(
+            "tinkersdefense",
+            "textures/gui/guide2.png");
 
     public GuiTDGuideBook() {}
 
@@ -83,11 +90,11 @@ public class GuiTDGuideBook extends GuiScreen {
             buttonList.add(chapters.get(i).getButton(3 + i, width, height));
         }
 
-        //		this.buttonList.add(new BookButton(3, ((this.width + 256) / 2) - 8, 15 + 64, true, 71, 180, 35, 21));
-        //		this.buttonList.add(new BookButton(4, ((this.width + 256) / 2) - 8, 35 + 64, true, 71, 200, 35, 21));
-        //		this.buttonList.add(new BookButton(5, ((this.width + 256) / 2) - 8, 55 + 64, true, 71, 220, 35, 21));
-        //		this.buttonList.add(new BookButton(6, ((this.width + 256) / 2) - 8, 75 + 64, true, 144, 180, 35, 21));
-        //		this.buttonList.add(new BookButton(7, ((this.width + 256) / 2) - 8, 95 + 64, true, 144, 200, 35, 21));
+        // this.buttonList.add(new BookButton(3, ((this.width + 256) / 2) - 8, 15 + 64, true, 71, 180, 35, 21));
+        // this.buttonList.add(new BookButton(4, ((this.width + 256) / 2) - 8, 35 + 64, true, 71, 200, 35, 21));
+        // this.buttonList.add(new BookButton(5, ((this.width + 256) / 2) - 8, 55 + 64, true, 71, 220, 35, 21));
+        // this.buttonList.add(new BookButton(6, ((this.width + 256) / 2) - 8, 75 + 64, true, 144, 180, 35, 21));
+        // this.buttonList.add(new BookButton(7, ((this.width + 256) / 2) - 8, 95 + 64, true, 144, 200, 35, 21));
         //
         //
         ((GuiButton) buttonList.get(chapter + 3)).enabled = false;
@@ -150,6 +157,7 @@ public class GuiTDGuideBook extends GuiScreen {
 
     @SideOnly(Side.CLIENT)
     static class BookButton extends GuiButton {
+
         private final boolean mirror;
 
         int iconX, iconY, iconW, iconH;
@@ -169,11 +177,9 @@ public class GuiTDGuideBook extends GuiScreen {
         @Override
         public void drawButton(Minecraft p_146112_1_, int p_146112_2_, int p_146112_3_) {
             if (visible) {
-                final boolean flag = (p_146112_2_ >= xPosition
-                                && p_146112_3_ >= yPosition
-                                && p_146112_2_ < xPosition + width
-                                && p_146112_3_ < yPosition + height)
-                        || !enabled;
+                final boolean flag = (p_146112_2_ >= xPosition && p_146112_3_ >= yPosition
+                        && p_146112_2_ < xPosition + width
+                        && p_146112_3_ < yPosition + height) || !enabled;
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 // p_146112_1_.getTextureManager().bindTexture(guiLocation2);
                 int k = iconX;
@@ -194,6 +200,7 @@ public class GuiTDGuideBook extends GuiScreen {
 
     @SideOnly(Side.CLIENT)
     static class Chapter {
+
         List<Page> pages;
         int buttonU, buttonV;
         int number;
@@ -220,17 +227,10 @@ public class GuiTDGuideBook extends GuiScreen {
 
     @SideOnly(Side.CLIENT)
     static class Page {
-        /*		enum TYPES {TEXT, CRAFTING1, CRAFTING2, FORGE1, FORGE2, FORGE3, ALLOY};
-        	0 = TEXT
-        	1 = CRAFTING1
-        	2 = CRAFTING2
-        	3 = FORGE1
-        	4 = FORGE2
-        	5 = FORGE3
-        	6 = ALLOY
-
-        	because apparently java overcomplicated enums to all hell
-        */
+        /*
+         * enum TYPES {TEXT, CRAFTING1, CRAFTING2, FORGE1, FORGE2, FORGE3, ALLOY}; 0 = TEXT 1 = CRAFTING1 2 = CRAFTING2
+         * 3 = FORGE1 4 = FORGE2 5 = FORGE3 6 = ALLOY because apparently java overcomplicated enums to all hell
+         */
 
         int type;
         int chapter;
@@ -249,13 +249,8 @@ public class GuiTDGuideBook extends GuiScreen {
             page = number;
         }
 
-        /*Crafting 1 recipe
-         * recipe - up to 9 stacks
-         *
-         * list to grid looks like
-         * 1 2 3
-         * 4 5 6
-         * 7 8 9
+        /*
+         * Crafting 1 recipe recipe - up to 9 stacks list to grid looks like 1 2 3 4 5 6 7 8 9
          */
         public Page(int chapter, int number, ItemStack result) {
             type = 1;
@@ -264,14 +259,8 @@ public class GuiTDGuideBook extends GuiScreen {
             result1 = result;
         }
 
-        /*Crafting 2 recipe
-         * recipe1 - up to 9 stacks
-         * recipe2 - up to 9 stacks
-         *
-         * list to grid looks like
-         * 1 2 3
-         * 4 5 6
-         * 7 8 9
+        /*
+         * Crafting 2 recipe recipe1 - up to 9 stacks recipe2 - up to 9 stacks list to grid looks like 1 2 3 4 5 6 7 8 9
          */
         public Page(int chapter, int number, ItemStack result1, ItemStack result2) {
             type = 2;
@@ -282,12 +271,7 @@ public class GuiTDGuideBook extends GuiScreen {
             this.result2 = result2;
         }
 
-        public Page(
-                int chapter,
-                int number,
-                DynamicToolPart item1,
-                DynamicToolPart item2,
-                DynamicToolPart item3,
+        public Page(int chapter, int number, DynamicToolPart item1, DynamicToolPart item2, DynamicToolPart item3,
                 DynamicToolPart item4) {
             type = 3;
             this.chapter = chapter;
@@ -354,8 +338,8 @@ public class GuiTDGuideBook extends GuiScreen {
                     fontRendererObj);
         }
 
-        private void drawCraftPage(
-                GuiScreen gui, int numOfCrafts, int w, int h, FontRenderer fontRendererObj, RenderItem itemRender) {
+        private void drawCraftPage(GuiScreen gui, int numOfCrafts, int w, int h, FontRenderer fontRendererObj,
+                RenderItem itemRender) {
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             gui.mc.getTextureManager().bindTexture(guiLocation2);
             final IRecipe recipe;
@@ -381,8 +365,8 @@ public class GuiTDGuideBook extends GuiScreen {
             GL11.glEnable(GL11.GL_BLEND);
         }
 
-        private void drawForgePage(
-                GuiScreen gui, int numOfCrafts, int w, int h, FontRenderer fontRendererObj, RenderItem itemRender) {
+        private void drawForgePage(GuiScreen gui, int numOfCrafts, int w, int h, FontRenderer fontRendererObj,
+                RenderItem itemRender) {
             if (TCCycleTimer == 0) {
                 TCItemCycle.clear();
                 for (int i = 0; i < 4; i++) {
@@ -521,41 +505,41 @@ public class GuiTDGuideBook extends GuiScreen {
                 }
             }
         } else if (recipe instanceof ShapedOreRecipe) {
-            //			final ShapedOreRecipe SRecipe = (ShapedOreRecipe) recipe;
-            //			for(int i = 0; i < 9; i++)
-            //			{
-            //				if(SRecipe.getInput() != null && OreDictionary. SRecipe.getInput()[i] instanceof ItemStack)
-            //				{
-            //					if(((ItemStack) SRecipe.getInput()[i]).getItem() instanceof ItemBlock)
-            //					{
-            //						RenderHelper.enableStandardItemLighting();
-            //					}
-            //					else
-            //					{
-            //						RenderHelper.enableGUIStandardItemLighting();
-            //					}
-            //					itemRender.renderItemAndEffectIntoGUI(font, tex, (ItemStack) SRecipe.getInput()[i], w / 2 + x + ((i %
+            // final ShapedOreRecipe SRecipe = (ShapedOreRecipe) recipe;
+            // for(int i = 0; i < 9; i++)
+            // {
+            // if(SRecipe.getInput() != null && OreDictionary. SRecipe.getInput()[i] instanceof ItemStack)
+            // {
+            // if(((ItemStack) SRecipe.getInput()[i]).getItem() instanceof ItemBlock)
+            // {
+            // RenderHelper.enableStandardItemLighting();
+            // }
+            // else
+            // {
+            // RenderHelper.enableGUIStandardItemLighting();
+            // }
+            // itemRender.renderItemAndEffectIntoGUI(font, tex, (ItemStack) SRecipe.getInput()[i], w / 2 + x + ((i %
             // 3) * 17), h / 2 + y + (i / 3 * 17));
-            //				}
-            //			}
+            // }
+            // }
         } else if (recipe instanceof ShapelessOreRecipe) {
-            //			final ShapelessOreRecipe SRecipe = (ShapelessOreRecipe) recipe;
-            //			for(int i = 0; i < 9; i++)
-            //			{
-            //				if(SRecipe.getInput() != null && SRecipe.getInput().get(i) instanceof ItemStack)
-            //				{
-            //					if(((ItemStack) SRecipe.getInput().get(i)).getItem() instanceof ItemBlock)
-            //					{
-            //						RenderHelper.enableStandardItemLighting();
-            //					}
-            //					else
-            //					{
-            //						RenderHelper.enableGUIStandardItemLighting();
-            //					}
-            //					itemRender.renderItemAndEffectIntoGUI(font, tex, (ItemStack) SRecipe.getInput().get(i), w / 2 + x +
+            // final ShapelessOreRecipe SRecipe = (ShapelessOreRecipe) recipe;
+            // for(int i = 0; i < 9; i++)
+            // {
+            // if(SRecipe.getInput() != null && SRecipe.getInput().get(i) instanceof ItemStack)
+            // {
+            // if(((ItemStack) SRecipe.getInput().get(i)).getItem() instanceof ItemBlock)
+            // {
+            // RenderHelper.enableStandardItemLighting();
+            // }
+            // else
+            // {
+            // RenderHelper.enableGUIStandardItemLighting();
+            // }
+            // itemRender.renderItemAndEffectIntoGUI(font, tex, (ItemStack) SRecipe.getInput().get(i), w / 2 + x +
             // ((i % 3) * 17), h / 2 + y + (i / 3 * 17));
-            //				}
-            //			}
+            // }
+            // }
         } else {
             final ShapedRecipes SRecipe = (ShapedRecipes) recipe;
             for (int i = 0; i < 9; i++) {
@@ -566,7 +550,11 @@ public class GuiTDGuideBook extends GuiScreen {
                         RenderHelper.enableGUIStandardItemLighting();
                     }
                     itemRender.renderItemAndEffectIntoGUI(
-                            font, tex, SRecipe.recipeItems[i], w / 2 + x + ((i % 3) * 17), h / 2 + y + (i / 3 * 17));
+                            font,
+                            tex,
+                            SRecipe.recipeItems[i],
+                            w / 2 + x + ((i % 3) * 17),
+                            h / 2 + y + (i / 3 * 17));
                 }
             }
         }

@@ -2,12 +2,15 @@ package lance5057.tDefense.core.tools.modifiers;
 
 import java.util.Arrays;
 import java.util.List;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
 import tconstruct.library.tools.ToolCore;
 import tconstruct.modifiers.tools.ModInteger;
 
 public class ModifierIntExclusive extends ModInteger {
+
     String[] exclusive;
     int modsNeeded = 0;
     String color;
@@ -17,16 +20,8 @@ public class ModifierIntExclusive extends ModInteger {
     int max = 5;
     String[] modExclusions;
 
-    public ModifierIntExclusive(
-            ItemStack[] items,
-            int effect,
-            String dataKey,
-            int increase,
-            String c,
-            String tip,
-            String[] exclusive,
-            int modsNeeded,
-            String[] excludeMods) {
+    public ModifierIntExclusive(ItemStack[] items, int effect, String dataKey, int increase, String c, String tip,
+            String[] exclusive, int modsNeeded, String[] excludeMods) {
         super(items, effect, dataKey, increase, c, tip);
         this.exclusive = exclusive;
         this.modsNeeded = modsNeeded;
@@ -36,16 +31,8 @@ public class ModifierIntExclusive extends ModInteger {
         modExclusions = excludeMods;
     }
 
-    public ModifierIntExclusive(
-            ItemStack[] items,
-            int effect,
-            String dataKey,
-            int increase,
-            String c,
-            String tip,
-            String[] exclusive,
-            int modsNeeded,
-            int max) {
+    public ModifierIntExclusive(ItemStack[] items, int effect, String dataKey, int increase, String c, String tip,
+            String[] exclusive, int modsNeeded, int max) {
         super(items, effect, dataKey, increase, c, tip);
         this.exclusive = exclusive;
         this.modsNeeded = modsNeeded;

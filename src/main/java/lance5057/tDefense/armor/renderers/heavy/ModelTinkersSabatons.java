@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.heavy;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * TinkersSabatons - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * TinkersSabatons - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersSabatons extends ArmorRenderer {
+
     public ModelRenderer BootL;
     public ModelRenderer FlairBackR;
     public ModelRenderer ShinGuardL;

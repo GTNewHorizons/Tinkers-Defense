@@ -1,11 +1,10 @@
 package lance5057.tDefense.armor.items.light;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.ArmorCore;
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
 import lance5057.tDefense.proxy.ClientProxy;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,7 +12,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class TinkersChausses extends ArmorCore {
+
     public TinkersChausses() {
         super(1, 2);
         setUnlocalizedName("tinkerschausses");
@@ -87,12 +90,12 @@ public class TinkersChausses extends ArmorCore {
         return "armor/chausses";
     }
 
-    //	@Override
-    //	public void onUpdate(ItemStack stack, World world, Entity entity, int par4,
-    //			boolean par5) {
-    //		super.onUpdate(stack, world, entity, par4, par5);
+    // @Override
+    // public void onUpdate(ItemStack stack, World world, Entity entity, int par4,
+    // boolean par5) {
+    // super.onUpdate(stack, world, entity, par4, par5);
     //
-    //	}
+    // }
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -102,7 +105,7 @@ public class TinkersChausses extends ArmorCore {
 
     @Override
     public String[] getTraits() {
-        return new String[] {"armor", "pants", "chausses", "lightarmor"};
+        return new String[] { "armor", "pants", "chausses", "lightarmor" };
     }
 
     @Override
@@ -111,8 +114,8 @@ public class TinkersChausses extends ArmorCore {
     }
 
     @Override
-    public ArmorProperties getProperties(
-            EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
+    public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage,
+            int slot) {
         final ArmorProperties armorp = new ArmorProperties(0, 0.2, 100); // 0.04 per half shirt
         // ((EntityPlayer)player).addChatComponentMessage(new ChatComponentText(Double.toString(damage)));
         return armorp;

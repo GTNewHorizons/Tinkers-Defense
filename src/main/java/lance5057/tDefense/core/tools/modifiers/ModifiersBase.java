@@ -1,15 +1,18 @@
 package lance5057.tDefense.core.tools.modifiers;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import lance5057.tDefense.core.items.MetaModifierItem;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+
 import tconstruct.library.tools.ToolCore;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public abstract class ModifiersBase {
+
     public MetaModifierItem modItems;
     public String[] itemStrings;
     public String name;

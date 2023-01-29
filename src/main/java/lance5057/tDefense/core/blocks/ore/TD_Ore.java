@@ -1,13 +1,16 @@
 package lance5057.tDefense.core.blocks.ore;
 
 import java.util.Random;
+
 import lance5057.tDefense.Reference;
 import lance5057.tDefense.TinkersDefense;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
 public class TD_Ore extends Block {
+
     Item drops;
 
     public TD_Ore(Material mat, String name, Item drop) {

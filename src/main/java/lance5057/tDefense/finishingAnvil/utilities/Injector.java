@@ -10,18 +10,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import lance5057.tDefense.Reference;
 import lance5057.tDefense.TinkersDefense;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.PatternBuilder;
 import tconstruct.library.crafting.PatternBuilder.MaterialSet;
 import tconstruct.library.tools.ToolCore;
 
 public class Injector extends ToolCore {
+
     List<String> heads = new ArrayList<String>();
     List<String> accessories = new ArrayList<String>();
     List<String> handles = new ArrayList<String>();
@@ -35,24 +39,21 @@ public class Injector extends ToolCore {
 
     protected void loadHeads(IIconRegister iconRegister) {
 
-        //		final URL jarFile =
-        //				TinkersDefense.class.getResource("assets/tinkersdefense/textures/items/");
+        // final URL jarFile =
+        // TinkersDefense.class.getResource("assets/tinkersdefense/textures/items/");
 
         final int toolLength = TConstructRegistry.tools.size();
         for (int i = 0; i < toolLength; i++) {
-            final String toolName = TConstructRegistry.tools
-                    .get(i)
-                    .getUnlocalizedName()
-                    .toLowerCase()
-                    .substring(
-                            TConstructRegistry.tools.get(i).getUnlocalizedName().lastIndexOf('.') + 1,
-                            TConstructRegistry.tools.get(i).getUnlocalizedName().length());
+            final String toolName = TConstructRegistry.tools.get(i).getUnlocalizedName().toLowerCase().substring(
+                    TConstructRegistry.tools.get(i).getUnlocalizedName().lastIndexOf('.') + 1,
+                    TConstructRegistry.tools.get(i).getUnlocalizedName().length());
             final String path = "/assets/tinkersdefense/textures/items/" + toolName + "/";
 
-            final Path zipfile = Paths.get(Minecraft.getMinecraft().mcDataDir.getPath() + "/mods/" + Reference.MOD_ID
-                    + "-" + Reference.VERSION + ".jar");
-            //			if(Files.exists(zipfile))
-            //			{
+            final Path zipfile = Paths.get(
+                    Minecraft.getMinecraft().mcDataDir
+                            .getPath() + "/mods/" + Reference.MOD_ID + "-" + Reference.VERSION + ".jar");
+            // if(Files.exists(zipfile))
+            // {
             Path root = null;
             FileSystem fs;
             try {
@@ -88,7 +89,7 @@ public class Injector extends ToolCore {
         }
     }
 
-    //	}
+    // }
 
     // }
     // }
@@ -161,59 +162,59 @@ public class Injector extends ToolCore {
                     tt.extraTT.add(formatted);
                 }
             }
-            //			tt.headTT.add("Magic Backhead");
-            //			tt.headTT.add("Scythe Backhead");
+            // tt.headTT.add("Magic Backhead");
+            // tt.headTT.add("Scythe Backhead");
             //
-            //			extras.add("_magic_extra");
-            //			extras.add("_scythe_extra");
-            //			extras.add("_halbard_extra");
-            //			extras.add("_ornate_extra");
+            // extras.add("_magic_extra");
+            // extras.add("_scythe_extra");
+            // extras.add("_halbard_extra");
+            // extras.add("_ornate_extra");
             //
-            //			tt.extraTT.add("Halbard Head");
-            //			tt.extraTT.add("Magic Head");
-            //			tt.extraTT.add("Scythe Head");
-            //			tt.extraTT.add("Ornate Head");
+            // tt.extraTT.add("Halbard Head");
+            // tt.extraTT.add("Magic Head");
+            // tt.extraTT.add("Scythe Head");
+            // tt.extraTT.add("Ornate Head");
             //
-            //			accessories.add("_magic_accessory");
-            //			accessories.add("_halbard_accessory");
-            //			accessories.add("_knob_accessory");
+            // accessories.add("_magic_accessory");
+            // accessories.add("_halbard_accessory");
+            // accessories.add("_knob_accessory");
 
             // Metallurgy 5
 
             tools.put(name, tt);
 
-            //			if(tool.getToolName().equals("Battleaxe"))
-            //			{
-            //				BattleAxe();
-            //			}
-            //			if(tool.getToolName().equals("Arrow"))
-            //			{
-            //				Arrow();
-            //			}
-            //			if(tool.getToolName().equals("Broadsword"))
-            //			{
-            //				Broadsword();
-            //			}
-            //			if(tool.getToolName().equals("Battlesign"))
-            //			{
-            //				Battlesign();
-            //			}
-            //			if(tool.getToolName().equals("Hatchet"))
-            //			{
-            //				Axe();
-            //			}
-            //			if(tool.getToolName().equals("Mattock"))
-            //			{
-            //				Mattock();
-            //			}
-            //			if(tool.getToolName().equals("Longbow"))
-            //			{
-            //				Longbow();
-            //			}
-            //			if(tool.getToolName().equals("HeaterShield"))
-            //			{
-            //				HeaterShield();
-            //			}
+            // if(tool.getToolName().equals("Battleaxe"))
+            // {
+            // BattleAxe();
+            // }
+            // if(tool.getToolName().equals("Arrow"))
+            // {
+            // Arrow();
+            // }
+            // if(tool.getToolName().equals("Broadsword"))
+            // {
+            // Broadsword();
+            // }
+            // if(tool.getToolName().equals("Battlesign"))
+            // {
+            // Battlesign();
+            // }
+            // if(tool.getToolName().equals("Hatchet"))
+            // {
+            // Axe();
+            // }
+            // if(tool.getToolName().equals("Mattock"))
+            // {
+            // Mattock();
+            // }
+            // if(tool.getToolName().equals("Longbow"))
+            // {
+            // Longbow();
+            // }
+            // if(tool.getToolName().equals("HeaterShield"))
+            // {
+            // HeaterShield();
+            // }
             setupIcons(tool, iconRegister, heads, headStrings, headIcons);
             setupIcons(tool, iconRegister, accessories, accessoryStrings, accessoryIcons);
             setupIcons(tool, iconRegister, handles, handleStrings, handleIcons);
@@ -284,12 +285,8 @@ public class Injector extends ToolCore {
         return null;
     }
 
-    public void setupIcons(
-            ToolCore tool,
-            IIconRegister iconRegister,
-            List<String> newList,
-            HashMap<Integer, String> toolStrings,
-            HashMap<Integer, IIcon> toolIcons) {
+    public void setupIcons(ToolCore tool, IIconRegister iconRegister, List<String> newList,
+            HashMap<Integer, String> toolStrings, HashMap<Integer, IIcon> toolIcons) {
         for (int i = 0; i < newList.size(); i++) {
             final PatternBuilder pb = PatternBuilder.instance;
             for (final Map.Entry<String, MaterialSet> entry : pb.materialSets.entrySet()) {

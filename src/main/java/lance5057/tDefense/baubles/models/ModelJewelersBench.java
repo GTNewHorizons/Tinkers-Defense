@@ -5,10 +5,10 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 /**
- * JewelersBench - lance5057
- * Created using Tabula 4.1.1
+ * JewelersBench - lance5057 Created using Tabula 4.1.1
  */
 public class ModelJewelersBench extends ModelBase {
+
     public ModelRenderer TableSide2;
     public ModelRenderer SawBlock1;
     public ModelRenderer SawBlock2;

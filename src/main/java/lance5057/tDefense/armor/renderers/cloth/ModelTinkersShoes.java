@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.cloth;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * ModelTinkersShoes - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * ModelTinkersShoes - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersShoes extends ArmorRenderer {
+
     public ModelRenderer FootL;
     public ModelRenderer FootR;
     public ModelRenderer OverLegL;

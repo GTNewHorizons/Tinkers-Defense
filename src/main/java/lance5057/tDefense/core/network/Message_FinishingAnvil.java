@@ -1,11 +1,13 @@
 package lance5057.tDefense.core.network;
 
+import net.minecraft.item.ItemStack;
+
 import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import io.netty.buffer.ByteBuf;
-import net.minecraft.item.ItemStack;
 
 public class Message_FinishingAnvil implements IMessage {
+
     ByteBufUtils bbu = new ByteBufUtils();
 
     public int x, y, z;

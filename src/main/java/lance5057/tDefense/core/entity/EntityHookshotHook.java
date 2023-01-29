@@ -10,9 +10,11 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.world.World;
+
 import tconstruct.library.tools.ToolCore;
 
 public class EntityHookshotHook extends EntityThrowable {
+
     public int maxChain;
 
     public static final int DATA_PLAYER = 22;
@@ -73,8 +75,7 @@ public class EntityHookshotHook extends EntityThrowable {
         super.onUpdate();
         if (ticksExisted > 0) // getChainLength())
         {
-            if (worldObj.isRemote
-                    && getThrower() instanceof EntityPlayer
+            if (worldObj.isRemote && getThrower() instanceof EntityPlayer
                     && ticksExisted % 4 == 0
                     && dataWatcher.getWatchableObjectByte(DATA_ARRIVED) == (byte) 1) {
                 ((EntityPlayer) getThrower()).playSound("tinkersdefense:hookshotChain", 1.0F, 1.0F);

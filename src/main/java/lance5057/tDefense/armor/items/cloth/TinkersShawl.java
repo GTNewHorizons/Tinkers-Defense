@@ -1,25 +1,30 @@
 package lance5057.tDefense.armor.items.cloth;
 
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.ArmorCore;
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
 import lance5057.tDefense.proxy.ClientProxy;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
 import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
 import vazkii.botania.api.mana.IManaDiscountArmor;
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @Optional.InterfaceList({
-    @Optional.Interface(modid = "Thaumcraft", iface = "thaumcraft.api.IVisDiscountGear", striprefs = true),
-    @Optional.Interface(modid = "Botania", iface = "vazkii.botania.api.mana.IManaDiscountArmor", striprefs = true)
-})
+        @Optional.Interface(modid = "Thaumcraft", iface = "thaumcraft.api.IVisDiscountGear", striprefs = true),
+        @Optional.Interface(
+                modid = "Botania",
+                iface = "vazkii.botania.api.mana.IManaDiscountArmor",
+                striprefs = true) })
 public class TinkersShawl extends ArmorCore implements IVisDiscountGear, IManaDiscountArmor {
+
     public TinkersShawl() {
         super(0, 1);
         setUnlocalizedName("tinkersshawl");
@@ -91,12 +96,12 @@ public class TinkersShawl extends ArmorCore implements IVisDiscountGear, IManaDi
         return "armor/shawl";
     }
 
-    //	@Override
-    //	public void onUpdate(ItemStack stack, World world, Entity entity, int par4,
-    //			boolean par5) {
-    //		super.onUpdate(stack, world, entity, par4, par5);
+    // @Override
+    // public void onUpdate(ItemStack stack, World world, Entity entity, int par4,
+    // boolean par5) {
+    // super.onUpdate(stack, world, entity, par4, par5);
     //
-    //	}
+    // }
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -106,7 +111,7 @@ public class TinkersShawl extends ArmorCore implements IVisDiscountGear, IManaDi
 
     @Override
     public String[] getTraits() {
-        return new String[] {"armor", "chest", "shawl", "cloth"};
+        return new String[] { "armor", "chest", "shawl", "cloth" };
     }
 
     @Override

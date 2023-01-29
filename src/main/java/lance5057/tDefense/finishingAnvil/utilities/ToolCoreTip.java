@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ToolCoreTip {
+
     String head = "";
     String handle = "";
     String accessory = "";
@@ -16,7 +17,7 @@ public class ToolCoreTip {
 
     public ToolCoreTip() {}
 
-    public String getPart(int id /*1-4*/) {
+    public String getPart(int id /* 1-4 */) {
         switch (id) {
             case 1:
                 return head;
@@ -31,7 +32,7 @@ public class ToolCoreTip {
         }
     }
 
-    public String getPartName(int partId /*1-4*/, int id) {
+    public String getPartName(int partId /* 1-4 */, int id) {
         switch (partId) {
             case 1:
                 if (headTT.size() > 0 && headTT.size() - 1 >= id && headTT.get(id) != null) return headTT.get(id);

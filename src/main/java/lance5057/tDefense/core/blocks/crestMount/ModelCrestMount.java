@@ -11,6 +11,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelCrestMount extends ModelBase {
+
     // fields
     ModelRenderer ShieldMount;
     ModelRenderer Base;
@@ -51,25 +52,16 @@ public class ModelCrestMount extends ModelBase {
         SwordMount2.mirror = true;
         setRotation(SwordMount2, 0F, -0.7853982F, 0F);
 
-        //      SwordMount3 = new ModelRenderer(this, 0, 0);
-        //      SwordMount3.addBox(-5F, 0F, -2F, 10, 2, 4);
-        //      SwordMount3.setRotationPoint(0F, 21.9F, 0F);
-        //      SwordMount3.setTextureSize(32, 32);
-        //      SwordMount3.mirror = true;
-        //      setRotation(SwordMount3, 0F, 1.570796F, 0F);
+        // SwordMount3 = new ModelRenderer(this, 0, 0);
+        // SwordMount3.addBox(-5F, 0F, -2F, 10, 2, 4);
+        // SwordMount3.setRotationPoint(0F, 21.9F, 0F);
+        // SwordMount3.setTextureSize(32, 32);
+        // SwordMount3.mirror = true;
+        // setRotation(SwordMount3, 0F, 1.570796F, 0F);
     }
 
-    public void render(
-            Entity entity,
-            float f,
-            float f1,
-            float f2,
-            float f3,
-            float f4,
-            float f5,
-            boolean left,
-            boolean right,
-            boolean shield) {
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5, boolean left,
+            boolean right, boolean shield) {
         super.render(entity, f, f1, f2, f3, f4, f5);
         setRotationAngles(f, f1, f2, f3, f4, f5, entity);
         if (shield) {

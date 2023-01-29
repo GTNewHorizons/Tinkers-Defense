@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.heavy;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * TinkerHelm - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * TinkerHelm - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersHelm extends ArmorRenderer {
+
     public ModelRenderer Visor;
     public ModelRenderer Helm2;
     public ModelRenderer WingR;

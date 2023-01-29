@@ -2,12 +2,15 @@ package lance5057.tDefense.core.tools.modifiers;
 
 import java.util.Arrays;
 import java.util.List;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
 import tconstruct.library.tools.ToolCore;
 import tconstruct.modifiers.tools.ModBoolean;
 
 public class ModifierBoolExclusive extends ModBoolean {
+
     String[] exclusive;
     protected int modsNeeded = 0;
     protected String color;
@@ -17,15 +20,8 @@ public class ModifierBoolExclusive extends ModBoolean {
     /*
      * excludeMods: If these modifier keys are present this modifier wont take.
      */
-    public ModifierBoolExclusive(
-            ItemStack[] items,
-            int effect,
-            String tag,
-            String c,
-            String tip,
-            String[] exclusive,
-            int modsNeeded,
-            String[] excludeMods) {
+    public ModifierBoolExclusive(ItemStack[] items, int effect, String tag, String c, String tip, String[] exclusive,
+            int modsNeeded, String[] excludeMods) {
         super(items, effect, tag, c, tip);
         this.exclusive = exclusive;
         this.modsNeeded = modsNeeded;

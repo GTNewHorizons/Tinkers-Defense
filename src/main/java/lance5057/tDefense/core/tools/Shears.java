@@ -2,6 +2,7 @@ package lance5057.tDefense.core.tools;
 
 import java.util.ArrayList;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.Enchantment;
@@ -15,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
+
 import tconstruct.library.tools.ToolCore;
 import tconstruct.tools.TinkerTools;
 
@@ -72,26 +74,25 @@ public class Shears extends ToolCore {
 
     @Override
     public String[] getTraits() {
-        return new String[] {"shears"};
+        return new String[] { "shears" };
     }
 
     @Override
-    public boolean onBlockDestroyed(
-            ItemStack p_150894_1_,
-            World p_150894_2_,
-            Block p_150894_3_,
-            int p_150894_4_,
-            int p_150894_5_,
-            int p_150894_6_,
-            EntityLivingBase p_150894_7_) {
-        if (p_150894_3_.getMaterial() != Material.leaves
-                && p_150894_3_ != Blocks.web
+    public boolean onBlockDestroyed(ItemStack p_150894_1_, World p_150894_2_, Block p_150894_3_, int p_150894_4_,
+            int p_150894_5_, int p_150894_6_, EntityLivingBase p_150894_7_) {
+        if (p_150894_3_.getMaterial() != Material.leaves && p_150894_3_ != Blocks.web
                 && p_150894_3_ != Blocks.tallgrass
                 && p_150894_3_ != Blocks.vine
                 && p_150894_3_ != Blocks.tripwire
                 && !(p_150894_3_ instanceof IShearable)) {
             return super.onBlockDestroyed(
-                    p_150894_1_, p_150894_2_, p_150894_3_, p_150894_4_, p_150894_5_, p_150894_6_, p_150894_7_);
+                    p_150894_1_,
+                    p_150894_2_,
+                    p_150894_3_,
+                    p_150894_4_,
+                    p_150894_5_,
+                    p_150894_6_,
+                    p_150894_7_);
         } else {
             return true;
         }
@@ -119,11 +120,16 @@ public class Shears extends ToolCore {
         }
         if (entity instanceof IShearable) {
             final IShearable target = (IShearable) entity;
-            if (target.isShearable(
-                    itemstack, entity.worldObj, (int) entity.posX, (int) entity.posY, (int) entity.posZ)) {
+            if (target
+                    .isShearable(itemstack, entity.worldObj, (int) entity.posX, (int) entity.posY, (int) entity.posZ)) {
                 final int enchant = EnchantmentHelper.getEnchantmentLevel(Enchantment.fortune.effectId, itemstack);
                 final ArrayList<ItemStack> drops = target.onSheared(
-                        itemstack, entity.worldObj, (int) entity.posX, (int) entity.posY, (int) entity.posZ, enchant);
+                        itemstack,
+                        entity.worldObj,
+                        (int) entity.posX,
+                        (int) entity.posY,
+                        (int) entity.posZ,
+                        enchant);
 
                 if (itemstack.getTagCompound().getCompoundTag("InfiTool").hasKey("Rainbow")) {
                     for (int i = 0; i < drops.size(); i++) {

@@ -12,6 +12,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.Constants;
 
 public class TileEntity_CrestMount extends TileEntity implements IInventory {
+
     public static int invSize = 4;
     public ItemStack[] inventory;
     public boolean[] flip;
@@ -27,13 +28,13 @@ public class TileEntity_CrestMount extends TileEntity implements IInventory {
     @Override
     public void updateEntity() {
         super.updateEntity();
-        //		if (!worldObj.isRemote)
-        //		{
+        // if (!worldObj.isRemote)
+        // {
 
-        //			 getWorldObj().markBlockForUpdate(xCoord, yCoord, zCoord);
-        //			 markDirty();
+        // getWorldObj().markBlockForUpdate(xCoord, yCoord, zCoord);
+        // markDirty();
         //
-        //		}
+        // }
     }
 
     @Override

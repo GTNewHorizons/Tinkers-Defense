@@ -5,10 +5,10 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 /**
- * Armor Anvil - lance5057
- * Created using Tabula 4.1.1
+ * Armor Anvil - lance5057 Created using Tabula 4.1.1
  */
 public class ModelFinishingAnvil extends ModelBase {
+
     public ModelRenderer Log;
     public ModelRenderer HammerHead;
     public ModelRenderer HammerHandle;

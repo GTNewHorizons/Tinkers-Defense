@@ -1,13 +1,16 @@
 package lance5057.tDefense.core.tools;
 
 import lance5057.tDefense.TinkersDefense;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
 import tconstruct.tools.TinkerTools;
 
 public class RoundShield extends Shield {
+
     int induceDamage = 0;
 
     public RoundShield() {

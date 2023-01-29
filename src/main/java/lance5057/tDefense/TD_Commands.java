@@ -2,6 +2,7 @@ package lance5057.tDefense;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -9,6 +10,7 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
 public class TD_Commands extends CommandBase implements ICommand {
+
     private final List<String> aliases;
     private final List<String> commands;
 

@@ -1,13 +1,14 @@
 package lance5057.tDefense.armor.renderers.heavy;
 
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
+
 import net.minecraft.client.model.ModelRenderer;
 
 /**
- * TinkersGrieves - Either Mojang or a mod author
- * Created using Tabula 4.1.1
+ * TinkersGrieves - Either Mojang or a mod author Created using Tabula 4.1.1
  */
 public class ModelTinkersGrieves extends ArmorRenderer {
+
     public ModelRenderer LegPlateL;
     public ModelRenderer CodPiece;
     public ModelRenderer LegPlateBackL;

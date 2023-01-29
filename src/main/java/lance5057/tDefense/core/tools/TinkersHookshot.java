@@ -1,12 +1,15 @@
 package lance5057.tDefense.core.tools;
 
 import java.util.List;
+
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.core.entity.EntityHookshotHook;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
 import tconstruct.library.crafting.ToolBuilder;
 import tconstruct.library.tools.ToolCore;
 import tconstruct.tools.TinkerTools;
@@ -66,7 +69,7 @@ public class TinkersHookshot extends ToolCore {
 
     @Override
     public String[] getTraits() {
-        return new String[] {"hookshot"};
+        return new String[] { "hookshot" };
     }
 
     @SuppressWarnings("unchecked")

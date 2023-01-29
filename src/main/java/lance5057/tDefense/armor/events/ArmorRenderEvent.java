@@ -1,17 +1,19 @@
 package lance5057.tDefense.armor.events;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import lance5057.tDefense.armor.ArmorCore;
+
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.RenderPlayerEvent;
+
 import tconstruct.armor.ArmorProxyClient;
 import tconstruct.armor.player.ArmorExtended;
 import tconstruct.library.tools.ToolCore;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ArmorRenderEvent {
 
@@ -32,8 +34,8 @@ public class ArmorRenderEvent {
             final ItemStack Accessory = armorEx.getStackInSlot(event.slot);
 
             if (Accessory != null && Accessory.getItem() instanceof ToolCore) {
-                final ModelBiped accessoryModel =
-                        Accessory.getItem().getArmorModel(event.entityLiving, Accessory, event.slot);
+                final ModelBiped accessoryModel = Accessory.getItem()
+                        .getArmorModel(event.entityLiving, Accessory, event.slot);
 
                 TrimArmor(accessoryModel, event);
             }
