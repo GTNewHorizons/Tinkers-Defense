@@ -7,20 +7,22 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.potion.*;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
-import cpw.mods.fml.relauncher.*;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mods.battlegear2.api.ISheathed;
 import mods.battlegear2.api.shield.IArrowCatcher;
 import mods.battlegear2.api.shield.IArrowDisplay;
 import mods.battlegear2.api.shield.IShield;
-import tconstruct.library.tools.*;
+import tconstruct.library.tools.AbilityHelper;
+import tconstruct.library.tools.HarvestTool;
 import tconstruct.tools.TinkerTools;
 
 public class RoundShield extends HarvestTool implements IShield, ISheathed, IArrowCatcher, IArrowDisplay {
