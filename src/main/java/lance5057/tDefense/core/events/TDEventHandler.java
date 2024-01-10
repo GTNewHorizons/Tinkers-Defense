@@ -1,20 +1,19 @@
 package lance5057.tDefense.core.events;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.armor.parts.ClothMaterial;
-import lance5057.tDefense.core.tools.RoundShield;
-import mods.battlegear2.api.PlayerEventChild.ShieldBlockEvent;
-
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.MinecraftForge;
 
-import tconstruct.library.TConstructRegistry;
-import tconstruct.library.event.PartBuilderEvent;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.armor.parts.ClothMaterial;
+import lance5057.tDefense.core.tools.RoundShield;
+import mods.battlegear2.api.PlayerEventChild.ShieldBlockEvent;
+import tconstruct.library.TConstructRegistry;
+import tconstruct.library.event.PartBuilderEvent;
 
 @Optional.InterfaceList({
         @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.PlayerEventChild.ShieldBlockEvent"), })

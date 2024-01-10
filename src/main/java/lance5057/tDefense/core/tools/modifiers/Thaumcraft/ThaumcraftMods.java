@@ -2,9 +2,6 @@ package lance5057.tDefense.core.tools.modifiers.Thaumcraft;
 
 import java.lang.reflect.Method;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -12,6 +9,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.common.FMLLog;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.client.TConstructClientRegistry;
 import tconstruct.library.crafting.ModifyBuilder;
@@ -19,7 +19,6 @@ import tconstruct.library.tools.ToolCore;
 import thaumcraft.api.ItemApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-import cpw.mods.fml.common.FMLLog;
 
 public class ThaumcraftMods extends ModifiersBase {
 

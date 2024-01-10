@@ -1,11 +1,11 @@
 package lance5057.tDefense.armor.renderers;
 
-import lance5057.tDefense.armor.ArmorCore;
-
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 import org.lwjgl.opengl.GL11;
+
+import lance5057.tDefense.armor.ArmorCore;
 
 /**
  * ModelBiped - Either Mojang or a mod author Created using Tabula 4.1.1

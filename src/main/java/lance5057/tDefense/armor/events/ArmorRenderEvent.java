@@ -1,19 +1,18 @@
 package lance5057.tDefense.armor.events;
 
-import lance5057.tDefense.armor.ArmorCore;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 
-import tconstruct.armor.ArmorProxyClient;
-import tconstruct.armor.player.ArmorExtended;
-import tconstruct.library.tools.ToolCore;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import lance5057.tDefense.armor.ArmorCore;
+import tconstruct.armor.ArmorProxyClient;
+import tconstruct.armor.player.ArmorExtended;
+import tconstruct.library.tools.ToolCore;
 
 public class ArmorRenderEvent {
 

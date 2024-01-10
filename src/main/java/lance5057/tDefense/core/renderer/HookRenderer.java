@@ -1,7 +1,5 @@
 package lance5057.tDefense.core.renderer;
 
-import lance5057.tDefense.core.entity.EntityHookshotHook;
-
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
@@ -12,6 +10,8 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
+
+import lance5057.tDefense.core.entity.EntityHookshotHook;
 
 public class HookRenderer extends Render {
 

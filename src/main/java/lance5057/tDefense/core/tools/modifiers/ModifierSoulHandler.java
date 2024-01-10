@@ -2,9 +2,6 @@ package lance5057.tDefense.core.tools.modifiers;
 
 import java.util.List;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.armor.ArmorCore;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.EntityCreature;
@@ -20,10 +17,12 @@ import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.armor.ArmorCore;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.event.ModifyEvent;
 import tconstruct.library.tools.ToolCore;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ModifierSoulHandler {
 

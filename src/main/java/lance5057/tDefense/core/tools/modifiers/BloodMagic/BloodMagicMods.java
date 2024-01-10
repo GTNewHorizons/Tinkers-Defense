@@ -1,10 +1,5 @@
 package lance5057.tDefense.core.tools.modifiers.BloodMagic;
 
-import lance5057.tDefense.TDIntegration;
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
-import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,10 +10,6 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-import tconstruct.library.TConstructRegistry;
-import tconstruct.library.client.TConstructClientRegistry;
-import tconstruct.library.crafting.ModifyBuilder;
-import tconstruct.library.tools.ToolCore;
 import WayofTime.alchemicalWizardry.ModItems;
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
@@ -26,6 +17,14 @@ import WayofTime.alchemicalWizardry.api.soulNetwork.SoulNetworkHandler;
 import WayofTime.alchemicalWizardry.common.items.EnergyItems;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import lance5057.tDefense.TDIntegration;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
+import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
+import tconstruct.library.TConstructRegistry;
+import tconstruct.library.client.TConstructClientRegistry;
+import tconstruct.library.crafting.ModifyBuilder;
+import tconstruct.library.tools.ToolCore;
 
 public class BloodMagicMods extends ModifiersBase {
 

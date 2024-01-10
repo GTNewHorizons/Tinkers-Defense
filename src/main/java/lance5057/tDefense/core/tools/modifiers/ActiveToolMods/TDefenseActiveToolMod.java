@@ -1,12 +1,11 @@
 package lance5057.tDefense.core.tools.modifiers.ActiveToolMods;
 
-import lance5057.tDefense.core.tools.modifiers.Modifiers;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
+import lance5057.tDefense.core.tools.modifiers.Modifiers;
 import tconstruct.library.ActiveToolMod;
 import tconstruct.library.tools.ToolCore;
 

@@ -1,8 +1,5 @@
 package lance5057.tDefense.armor.events;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.armor.ArmorCore;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -11,10 +8,12 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
-import tconstruct.library.event.ToolCraftEvent.NormalTool;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.armor.ArmorCore;
+import tconstruct.library.event.ToolCraftEvent.NormalTool;
 
 public class ArmorModEvents {
 

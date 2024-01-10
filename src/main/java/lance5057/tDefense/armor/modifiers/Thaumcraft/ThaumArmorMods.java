@@ -1,15 +1,14 @@
 package lance5057.tDefense.armor.modifiers.Thaumcraft;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
-import lance5057.tDefense.core.tools.modifiers.ModifierIntExclusive;
-import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
+import lance5057.tDefense.core.tools.modifiers.ModifierIntExclusive;
+import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.client.TConstructClientRegistry;
 import tconstruct.library.crafting.ModifyBuilder;

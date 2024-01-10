@@ -1,9 +1,9 @@
 package lance5057.tDefense.core.tools;
 
-import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
+import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
 
 public class ModifierSoul extends ModifierBoolExclusive {
 

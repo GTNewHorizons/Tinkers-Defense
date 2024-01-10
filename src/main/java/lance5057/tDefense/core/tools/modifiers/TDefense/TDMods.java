@@ -3,18 +3,6 @@ package lance5057.tDefense.core.tools.modifiers.TDefense;
 import java.util.ArrayList;
 import java.util.Random;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.core.tools.ModifierSoul;
-import lance5057.tDefense.core.tools.Shield;
-import lance5057.tDefense.core.tools.modifiers.ActiveToolMods.TDefenseActiveToolMod;
-import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
-import lance5057.tDefense.core.tools.modifiers.ModifierIntExclusive;
-import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
-import lance5057.tDefense.core.tools.modifiers.modLapisShears;
-import lance5057.tDefense.proxy.CommonProxy;
-import mods.battlegear2.api.PlayerEventChild.ShieldBlockEvent;
-import mods.battlegear2.api.core.IBattlePlayer;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -41,15 +29,26 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.core.tools.ModifierSoul;
+import lance5057.tDefense.core.tools.Shield;
+import lance5057.tDefense.core.tools.modifiers.ActiveToolMods.TDefenseActiveToolMod;
+import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
+import lance5057.tDefense.core.tools.modifiers.ModifierIntExclusive;
+import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
+import lance5057.tDefense.core.tools.modifiers.modLapisShears;
+import lance5057.tDefense.proxy.CommonProxy;
+import mods.battlegear2.api.PlayerEventChild.ShieldBlockEvent;
+import mods.battlegear2.api.core.IBattlePlayer;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.client.TConstructClientRegistry;
 import tconstruct.library.crafting.ModifyBuilder;
 import tconstruct.library.tools.ToolCore;
 import tconstruct.tools.TinkerTools;
 import tconstruct.weaponry.TinkerWeaponry;
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class TDMods extends ModifiersBase {
 
@@ -402,7 +401,7 @@ public class TDMods extends ModifiersBase {
     }
 
     public void UpdateMirrors(ToolCore tool, ItemStack stack, World world, Entity entity) {
-        if (((IBattlePlayer) entity).isBlockingWithShield()) {
+        if (((IBattlePlayer) entity).battlegear2$isBlockingWithShield()) {
             final AxisAlignedBB boundingBox = AxisAlignedBB.getBoundingBox(
                     ((EntityLivingBase) entity).posX - 3,
                     ((EntityLivingBase) entity).posY - 3,

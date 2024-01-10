@@ -2,11 +2,6 @@ package lance5057.tDefense.core.tools;
 
 import java.util.List;
 
-import mods.battlegear2.api.ISheathed;
-import mods.battlegear2.api.shield.IArrowCatcher;
-import mods.battlegear2.api.shield.IArrowDisplay;
-import mods.battlegear2.api.shield.IShield;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -23,10 +18,14 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
-import tconstruct.library.tools.ToolCore;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mods.battlegear2.api.ISheathed;
+import mods.battlegear2.api.shield.IArrowCatcher;
+import mods.battlegear2.api.shield.IArrowDisplay;
+import mods.battlegear2.api.shield.IShield;
+import tconstruct.library.tools.ToolCore;
 
 @Optional.InterfaceList({ @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.ISheathed"),
         @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.shield.IArrowCatcher"),

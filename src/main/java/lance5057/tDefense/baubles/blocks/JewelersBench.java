@@ -1,7 +1,5 @@
 package lance5057.tDefense.baubles.blocks;
 
-import lance5057.tDefense.baubles.tileentities.TileEntity_JewelersBench;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -11,6 +9,7 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import lance5057.tDefense.baubles.tileentities.TileEntity_JewelersBench;
 
 public class JewelersBench extends Block implements ITileEntityProvider {
 

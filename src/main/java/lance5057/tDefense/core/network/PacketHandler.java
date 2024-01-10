@@ -1,7 +1,7 @@
 package lance5057.tDefense.core.network;
 
-import lance5057.tDefense.TinkersDefense;
 import cpw.mods.fml.relauncher.Side;
+import lance5057.tDefense.TinkersDefense;
 
 public class PacketHandler {
 

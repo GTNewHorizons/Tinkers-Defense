@@ -1,17 +1,16 @@
 package lance5057.tDefense.armor.items;
 
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.ArmorCore;
 import lance5057.tDefense.armor.renderers.ArmorRenderer;
 import lance5057.tDefense.proxy.ClientProxy;
-
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-
 import tconstruct.library.accessory.IAccessory;
 import tconstruct.tools.TinkerTools;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class Sheath extends ArmorCore implements IAccessory {
 

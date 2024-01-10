@@ -1,19 +1,5 @@
 package lance5057.tDefense.armor.modifiers;
 
-import lance5057.tDefense.TDIntegration;
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.armor.ArmorCore;
-import lance5057.tDefense.armor.TDArmorAddon;
-import lance5057.tDefense.armor.items.cloth.TinkersRobe;
-import lance5057.tDefense.armor.items.heavy.TinkersGrieves;
-import lance5057.tDefense.armor.items.light.TinkersChausses;
-import lance5057.tDefense.armor.modifiers.BloodMagic.BloodArmorMods;
-import lance5057.tDefense.armor.modifiers.Botania.BotaniaArmorMods;
-import lance5057.tDefense.armor.modifiers.Thaumcraft.ThaumArmorMods;
-import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
-import lance5057.tDefense.core.tools.modifiers.ModifierIntExclusive;
-import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -30,15 +16,28 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import lance5057.tDefense.TDIntegration;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.armor.ArmorCore;
+import lance5057.tDefense.armor.TDArmorAddon;
+import lance5057.tDefense.armor.items.cloth.TinkersRobe;
+import lance5057.tDefense.armor.items.heavy.TinkersGrieves;
+import lance5057.tDefense.armor.items.light.TinkersChausses;
+import lance5057.tDefense.armor.modifiers.BloodMagic.BloodArmorMods;
+import lance5057.tDefense.armor.modifiers.Botania.BotaniaArmorMods;
+import lance5057.tDefense.armor.modifiers.Thaumcraft.ThaumArmorMods;
+import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
+import lance5057.tDefense.core.tools.modifiers.ModifierIntExclusive;
+import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.client.TConstructClientRegistry;
 import tconstruct.library.crafting.ModifyBuilder;
 import tconstruct.library.tools.ToolCore;
 import tconstruct.tools.TinkerTools;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ArmorMods extends ModifiersBase {
 
