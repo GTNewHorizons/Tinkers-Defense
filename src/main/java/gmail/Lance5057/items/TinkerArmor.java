@@ -1,8 +1,5 @@
 package gmail.Lance5057.items;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import gmail.Lance5057.TinkersDefense;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
@@ -11,7 +8,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import gmail.Lance5057.TinkersDefense;
+
 public class TinkerArmor extends ItemArmor {
+
     public TinkerArmor(ArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
         super(par2EnumArmorMaterial, par3, par4);
     }

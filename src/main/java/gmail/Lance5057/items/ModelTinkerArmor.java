@@ -11,6 +11,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelTinkerArmor extends ModelBiped {
+
     // fields
     ModelRenderer BackPlate;
     ModelRenderer BreastPlate;

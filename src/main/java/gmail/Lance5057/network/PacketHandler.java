@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import gmail.Lance5057.TinkersDefense;
 
 public class PacketHandler {
+
     private static int id = 0;
 
     public static void init() {

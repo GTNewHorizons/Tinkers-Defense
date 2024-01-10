@@ -1,16 +1,19 @@
 package gmail.Lance5057.items;
 
 import java.util.List;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
+
 import tconstruct.library.crafting.ToolBuilder;
 import tconstruct.library.tools.Weapon;
 
 public abstract class RoyalGuard extends Weapon {
+
     public RoyalGuard() {
         super(10);
     }

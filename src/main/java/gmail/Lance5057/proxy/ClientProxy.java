@@ -1,5 +1,8 @@
 package gmail.Lance5057.proxy;
 
+import net.minecraft.client.model.ModelBiped;
+import net.minecraftforge.client.MinecraftForgeClient;
+
 import cpw.mods.fml.client.registry.ClientRegistry;
 import gmail.Lance5057.TinkersDefense;
 import gmail.Lance5057.items.ModelTinkerArmor;
@@ -9,11 +12,10 @@ import gmail.Lance5057.models.Renderer_JewelersBench;
 import gmail.Lance5057.tileentities.TileEntity_ArmorAnvil;
 import gmail.Lance5057.tileentities.TileEntity_CrestMount;
 import gmail.Lance5057.tileentities.TileEntity_JewelersBench;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraftforge.client.MinecraftForgeClient;
 import tconstruct.client.FlexibleToolRenderer;
 
 public class ClientProxy extends CommonProxy {
+
     private static final ModelTinkerArmor tutChest = new ModelTinkerArmor(1.0f);
 
     @Override

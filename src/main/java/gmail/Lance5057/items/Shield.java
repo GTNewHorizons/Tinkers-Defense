@@ -1,6 +1,5 @@
 package gmail.Lance5057.items;
 
-import cpw.mods.fml.relauncher.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -8,9 +7,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.world.World;
+
+import cpw.mods.fml.relauncher.*;
 import tconstruct.library.tools.ToolCore;
 
 public abstract class Shield extends ToolCore {
+
     public Shield(int baseDamage) {
         super(baseDamage);
     }
@@ -37,14 +39,15 @@ public abstract class Shield extends ToolCore {
         }
         return baseSpeed();
     }
+
     /**
-     * returns the action that specifies what animation to play when the items
-     * is being used
+     * returns the action that specifies what animation to play when the items is being used
      */
     @Override
     public EnumAction getItemUseAction(ItemStack par1ItemStack) {
         return EnumAction.block;
     }
+
     /**
      * How long it takes to use or consume an item
      */
@@ -52,9 +55,9 @@ public abstract class Shield extends ToolCore {
     public int getMaxItemUseDuration(ItemStack par1ItemStack) {
         return 72000;
     }
+
     /**
-     * Called whenever this item is equipped and the right mouse button is
-     * pressed. Args: itemStack, world, entityPlayer
+     * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
@@ -63,19 +66,11 @@ public abstract class Shield extends ToolCore {
     }
 
     @Override
-    public boolean onItemUse(
-            ItemStack stack,
-            EntityPlayer player,
-            World world,
-            int x,
-            int y,
-            int z,
-            int side,
-            float clickX,
-            float clickY,
-            float clickZ) {
+    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side,
+            float clickX, float clickY, float clickZ) {
         return false;
     }
+
     /**
      * Returns if the item (tool) can harvest results from the block type.
      */
@@ -107,10 +102,10 @@ public abstract class Shield extends ToolCore {
 
     @Override
     public String[] getTraits() {
-        return new String[] {"Shield", "melee"};
+        return new String[] { "Shield", "melee" };
     }
 
-    public static Material[] web = new Material[] {Material.web, Material.cloth, Material.coral, Material.cake};
+    public static Material[] web = new Material[] { Material.web, Material.cloth, Material.coral, Material.cake };
     public static Material[] none = new Material[0];
 
     protected String getHarvestType() {

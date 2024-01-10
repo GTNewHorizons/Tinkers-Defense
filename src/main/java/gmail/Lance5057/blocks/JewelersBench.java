@@ -1,12 +1,13 @@
 package gmail.Lance5057.blocks;
 
-import gmail.Lance5057.tileentities.TileEntity_JewelersBench;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+
+import gmail.Lance5057.tileentities.TileEntity_JewelersBench;
 
 public class JewelersBench extends Block implements ITileEntityProvider {
 

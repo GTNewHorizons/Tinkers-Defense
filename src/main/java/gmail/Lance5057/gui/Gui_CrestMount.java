@@ -1,21 +1,25 @@
 package gmail.Lance5057.gui;
 
-import gmail.Lance5057.TinkersDefense;
-import gmail.Lance5057.containers.Container_CrestMount;
-import gmail.Lance5057.network.Message_CrestMount;
-import gmail.Lance5057.tileentities.TileEntity_CrestMount;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
+
 import org.lwjgl.opengl.GL11;
 
+import gmail.Lance5057.TinkersDefense;
+import gmail.Lance5057.containers.Container_CrestMount;
+import gmail.Lance5057.network.Message_CrestMount;
+import gmail.Lance5057.tileentities.TileEntity_CrestMount;
+
 public class Gui_CrestMount extends GuiContainer {
+
     private float xSize_lo;
     private float ySize_lo;
 
-    private static final ResourceLocation iconLocation =
-            new ResourceLocation("tinkersdefense", "textures/gui/crest_mount.png");
+    private static final ResourceLocation iconLocation = new ResourceLocation(
+            "tinkersdefense",
+            "textures/gui/crest_mount.png");
 
     private final TileEntity_CrestMount inventory;
 

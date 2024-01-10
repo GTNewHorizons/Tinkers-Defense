@@ -1,11 +1,7 @@
 package gmail.Lance5057.items;
 
-import cpw.mods.fml.relauncher.*;
 import java.util.List;
-import mods.battlegear2.api.ISheathed;
-import mods.battlegear2.api.shield.IArrowCatcher;
-import mods.battlegear2.api.shield.IArrowDisplay;
-import mods.battlegear2.api.shield.IShield;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IProjectile;
@@ -18,10 +14,17 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+
+import cpw.mods.fml.relauncher.*;
+import mods.battlegear2.api.ISheathed;
+import mods.battlegear2.api.shield.IArrowCatcher;
+import mods.battlegear2.api.shield.IArrowDisplay;
+import mods.battlegear2.api.shield.IShield;
 import tconstruct.library.tools.*;
 import tconstruct.tools.TinkerTools;
 
 public class RoundShield extends HarvestTool implements IShield, ISheathed, IArrowCatcher, IArrowDisplay {
+
     int induceDamage = 0;
 
     public RoundShield() {
@@ -100,16 +103,15 @@ public class RoundShield extends HarvestTool implements IShield, ISheathed, IArr
     public String getDefaultFolder() {
         return "shield";
     }
+
     /* tool_TinkerShield specific */
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
         if (AbilityHelper.onLeftClickEntity(stack, player, entity, this)) {
             entity.hurtResistantTime += 7;
             /*
-             * if (entity instanceof EntityLiving) { EntityLiving living =
-             * (EntityLiving) entity; if (living.getHealth() <= 0) {
-             *
-             * } }
+             * if (entity instanceof EntityLiving) { EntityLiving living = (EntityLiving) entity; if (living.getHealth()
+             * <= 0) { } }
              */
             // if (entity.getHealth() <= 0)
         }
@@ -208,17 +210,19 @@ public class RoundShield extends HarvestTool implements IShield, ISheathed, IArr
         NBTTagCompound tags = par1ItemStack.getTagCompound();
         super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
         par3List.add("");
-        par3List.add(EnumChatFormatting.DARK_GREEN
-                + ItemStack.field_111284_a.format(
-                        1F / (10f / tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") * 2) / 20F)
-                + StatCollector.translateToLocal("attribute.shield.block.time"));
+        par3List.add(
+                EnumChatFormatting.DARK_GREEN
+                        + ItemStack.field_111284_a.format(
+                                1F / (10f / tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") * 2) / 20F)
+                        + StatCollector.translateToLocal("attribute.shield.block.time"));
         int arrowCount = getArrowCount(par1ItemStack);
         if (arrowCount > 0) {
-            par3List.add(String.format(
-                    "%s%s %s",
-                    EnumChatFormatting.GOLD,
-                    arrowCount,
-                    StatCollector.translateToLocal("attribute.shield.arrow.count")));
+            par3List.add(
+                    String.format(
+                            "%s%s %s",
+                            EnumChatFormatting.GOLD,
+                            arrowCount,
+                            StatCollector.translateToLocal("attribute.shield.arrow.count")));
         }
     }
 
@@ -227,9 +231,8 @@ public class RoundShield extends HarvestTool implements IShield, ISheathed, IArr
         return materials;
     }
 
-    static Material[] materials = new Material[] {
-        Material.rock, Material.iron, Material.ice, Material.glass, Material.piston, Material.anvil, Material.circuits
-    };
+    static Material[] materials = new Material[] { Material.rock, Material.iron, Material.ice, Material.glass,
+            Material.piston, Material.anvil, Material.circuits };
 
     @Override
     protected String getHarvestType() {
