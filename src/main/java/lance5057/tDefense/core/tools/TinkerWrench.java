@@ -12,14 +12,14 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-import tconstruct.library.tools.AbilityHelper;
-import tconstruct.library.tools.ToolCore;
-import tconstruct.tools.TinkerTools;
 import buildcraft.api.tools.IToolWrench;
 import cofh.api.block.IDismantleable;
 import cofh.api.item.IToolHammer;
 import cpw.mods.fml.common.Optional;
 import ic2.api.tile.IWrenchable;
+import tconstruct.library.tools.AbilityHelper;
+import tconstruct.library.tools.ToolCore;
+import tconstruct.tools.TinkerTools;
 
 @Optional.InterfaceList({ @Optional.Interface(modid = "buildcraft", iface = "buildcraft.api.tools.IToolWrench"),
         @Optional.Interface(modid = "cofh", iface = "cofh.api.item.IToolHammer") })

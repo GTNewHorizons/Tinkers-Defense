@@ -1,9 +1,9 @@
 package lance5057.tDefense.core.items;
 
+import net.minecraft.item.Item;
+
 import lance5057.tDefense.Reference;
 import lance5057.tDefense.TinkersDefense;
-
-import net.minecraft.item.Item;
 
 public class RawGem extends Item {
 

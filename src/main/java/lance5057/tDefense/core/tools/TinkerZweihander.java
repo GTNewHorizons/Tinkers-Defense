@@ -12,10 +12,10 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.common.Optional;
 import tconstruct.library.tools.AbilityHelper;
 import tconstruct.library.tools.Weapon;
 import tconstruct.tools.TinkerTools;
-import cpw.mods.fml.common.Optional;
 
 @Optional.InterfaceList({
         @Optional.Interface(modid = "battlegear2", iface = "mods.battlegear2.api.weapons.IBattlegearWeapon"), })

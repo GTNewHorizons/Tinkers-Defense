@@ -1,10 +1,5 @@
 package lance5057.tDefense.armor.items.light;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.armor.ArmorCore;
-import lance5057.tDefense.armor.renderers.ArmorRenderer;
-import lance5057.tDefense.proxy.ClientProxy;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,6 +9,10 @@ import net.minecraft.util.DamageSource;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.armor.ArmorCore;
+import lance5057.tDefense.armor.renderers.ArmorRenderer;
+import lance5057.tDefense.proxy.ClientProxy;
 
 public class TinkersChausses extends ArmorCore {
 

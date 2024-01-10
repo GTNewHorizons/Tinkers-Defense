@@ -1,10 +1,5 @@
 package lance5057.tDefense.core.tools.modifiers.Botania;
 
-import lance5057.tDefense.TDIntegration;
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
-import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -17,6 +12,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import lance5057.tDefense.TDIntegration;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.core.tools.modifiers.ModifierBoolExclusive;
+import lance5057.tDefense.core.tools.modifiers.ModifiersBase;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.client.TConstructClientRegistry;
 import tconstruct.library.crafting.ModifyBuilder;
@@ -31,9 +33,6 @@ import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 import vazkii.botania.common.item.equipment.tool.terrasteel.ItemTerraSword;
 import vazkii.botania.common.lib.LibBlockNames;
 import vazkii.botania.common.lib.LibOreDict;
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Optional.InterfaceList({
         @Optional.Interface(modid = "botania", iface = "vazkii.botania.common.entity.EntityManaBurst"),

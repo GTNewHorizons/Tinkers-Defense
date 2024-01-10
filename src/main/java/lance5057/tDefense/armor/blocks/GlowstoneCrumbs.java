@@ -2,13 +2,13 @@ package lance5057.tDefense.armor.blocks;
 
 import java.util.Random;
 
-import lance5057.tDefense.Reference;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+
+import lance5057.tDefense.Reference;
 
 public class GlowstoneCrumbs extends Block {
 

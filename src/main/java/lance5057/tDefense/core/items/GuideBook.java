@@ -1,12 +1,12 @@
 package lance5057.tDefense.core.items;
 
-import lance5057.tDefense.Reference;
-import lance5057.tDefense.TinkersDefense;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import lance5057.tDefense.Reference;
+import lance5057.tDefense.TinkersDefense;
 
 public class GuideBook extends Item {
 

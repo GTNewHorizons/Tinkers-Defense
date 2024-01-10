@@ -3,13 +3,6 @@ package lance5057.tDefense.finishingAnvil.blocks.finishingAnvil;
 import java.util.ArrayList;
 import java.util.List;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.armor.ArmorCore;
-import lance5057.tDefense.armor.renderers.ArmorRenderer;
-import lance5057.tDefense.core.network.Message_FinishingAnvil;
-import lance5057.tDefense.finishingAnvil.utilities.Injector;
-import lance5057.tDefense.finishingAnvil.utilities.ToolCoreTip;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.ScaledResolution;
@@ -27,10 +20,16 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import org.lwjgl.util.glu.Project;
 
-import tconstruct.library.TConstructRegistry;
-import tconstruct.library.tools.ToolCore;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.config.GuiButtonExt;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.armor.ArmorCore;
+import lance5057.tDefense.armor.renderers.ArmorRenderer;
+import lance5057.tDefense.core.network.Message_FinishingAnvil;
+import lance5057.tDefense.finishingAnvil.utilities.Injector;
+import lance5057.tDefense.finishingAnvil.utilities.ToolCoreTip;
+import tconstruct.library.TConstructRegistry;
+import tconstruct.library.tools.ToolCore;
 
 public class Gui_FinishingAnvil extends GuiContainer {
 

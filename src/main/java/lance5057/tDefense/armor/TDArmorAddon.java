@@ -1,5 +1,17 @@
 package lance5057.tDefense.armor;
 
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.MinecraftForge;
+
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.blocks.GlowstoneCrumbs;
 import lance5057.tDefense.armor.blocks.UnstableBlock;
@@ -20,24 +32,11 @@ import lance5057.tDefense.armor.items.light.TinkersBoots;
 import lance5057.tDefense.armor.items.light.TinkersChausses;
 import lance5057.tDefense.armor.items.light.TinkersCoif;
 import lance5057.tDefense.armor.items.light.TinkersHauberk;
-
-import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.client.MinecraftForgeClient;
-import net.minecraftforge.common.MinecraftForge;
-
 import tconstruct.client.FlexibleToolRenderer;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.ToolBuilder;
 import tconstruct.library.tools.ToolCore;
 import tconstruct.tools.TinkerTools;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
 
 public class TDArmorAddon {
 

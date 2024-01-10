@@ -1,5 +1,11 @@
 package lance5057.tDefense.proxy;
 
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+
+import cpw.mods.fml.common.network.IGuiHandler;
+import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.core.blocks.crestMount.Container_CrestMount;
 import lance5057.tDefense.core.blocks.crestMount.Gui_CrestMount;
@@ -8,13 +14,6 @@ import lance5057.tDefense.core.tools.modifiers.ModifierSoulHandler;
 import lance5057.tDefense.finishingAnvil.blocks.finishingAnvil.Container_FinishingAnvil;
 import lance5057.tDefense.finishingAnvil.blocks.finishingAnvil.Gui_FinishingAnvil;
 import lance5057.tDefense.finishingAnvil.blocks.finishingAnvil.TileEntity_FinishingAnvil;
-
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.world.World;
-
-import cpw.mods.fml.common.network.IGuiHandler;
-import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 
 public class CommonProxy implements IGuiHandler {
 

@@ -1,10 +1,5 @@
 package lance5057.tDefense.armor.items.cloth;
 
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.armor.ArmorCore;
-import lance5057.tDefense.armor.renderers.ArmorRenderer;
-import lance5057.tDefense.proxy.ClientProxy;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,17 +7,21 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+import WayofTime.alchemicalWizardry.api.alchemy.energy.IAlchemyGoggles;
+import WayofTime.alchemicalWizardry.api.items.interfaces.ILPGauge;
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.armor.ArmorCore;
+import lance5057.tDefense.armor.renderers.ArmorRenderer;
+import lance5057.tDefense.proxy.ClientProxy;
 import tconstruct.tools.TinkerTools;
 import thaumcraft.api.IGoggles;
 import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.nodes.IRevealer;
 import vazkii.botania.api.mana.IManaDiscountArmor;
-import WayofTime.alchemicalWizardry.api.alchemy.energy.IAlchemyGoggles;
-import WayofTime.alchemicalWizardry.api.items.interfaces.ILPGauge;
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @Optional.InterfaceList({
         @Optional.Interface(modid = "Thaumcraft", iface = "thaumcraft.api.IGoggles", striprefs = true),

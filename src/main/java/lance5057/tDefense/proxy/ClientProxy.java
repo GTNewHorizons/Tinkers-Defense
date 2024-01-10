@@ -1,5 +1,8 @@
 package lance5057.tDefense.proxy;
 
+import net.minecraftforge.client.MinecraftForgeClient;
+
+import cpw.mods.fml.client.registry.ClientRegistry;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.armor.TDArmorAddon;
 import lance5057.tDefense.armor.renderers.ModelTinkersGauntlets;
@@ -24,11 +27,7 @@ import lance5057.tDefense.core.renderer.MoreFlexibleToolRenderer;
 import lance5057.tDefense.core.tools.modifiers.ModifierSoulHandler;
 import lance5057.tDefense.finishingAnvil.blocks.finishingAnvil.Renderer_FinishingAnvil;
 import lance5057.tDefense.finishingAnvil.blocks.finishingAnvil.TileEntity_FinishingAnvil;
-
-import net.minecraftforge.client.MinecraftForgeClient;
-
 import tconstruct.client.FlexibleToolRenderer;
-import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy {
     // public static final ModelSheath sheath = new ModelSheath();

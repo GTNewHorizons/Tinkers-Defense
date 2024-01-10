@@ -1,8 +1,8 @@
 package lance5057.tDefense.armor.renderers.light;
 
-import lance5057.tDefense.armor.renderers.ArmorRenderer;
-
 import net.minecraft.client.model.ModelRenderer;
+
+import lance5057.tDefense.armor.renderers.ArmorRenderer;
 
 /**
  * ModelTinkersHauberk - Either Mojang or a mod author Created using Tabula 4.1.1

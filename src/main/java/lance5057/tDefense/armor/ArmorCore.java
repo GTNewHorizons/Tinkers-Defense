@@ -1,11 +1,5 @@
 package lance5057.tDefense.armor;
 
-import lance5057.tDefense.TDIntegration;
-import lance5057.tDefense.TinkersDefense;
-import lance5057.tDefense.armor.parts.ClothMaterial;
-import lance5057.tDefense.armor.renderers.ArmorRenderer;
-import lance5057.tDefense.core.tools.modifiers.Modifiers;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,16 +14,21 @@ import net.minecraftforge.common.ISpecialArmor;
 
 import org.lwjgl.opengl.GL11;
 
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import lance5057.tDefense.TDIntegration;
+import lance5057.tDefense.TinkersDefense;
+import lance5057.tDefense.armor.parts.ClothMaterial;
+import lance5057.tDefense.armor.renderers.ArmorRenderer;
+import lance5057.tDefense.core.tools.modifiers.Modifiers;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.tools.AbilityHelper;
 import tconstruct.library.tools.CustomMaterial;
 import tconstruct.library.tools.ToolCore;
 import thaumcraft.api.IRunicArmor;
 import vazkii.botania.api.item.IPixieSpawner;
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @Optional.InterfaceList({
         @Optional.Interface(modid = "Thaumcraft", iface = "thaumcraft.api.IRunicArmor", striprefs = true),
