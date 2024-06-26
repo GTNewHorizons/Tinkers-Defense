@@ -1,0 +1,13 @@
+{
+  "ideaDirPath": "D:/Github/Tinkers-Defense",
+  "modulesMap": {
+    "Tinkers-Defense": "D:/Github/Tinkers-Defense/Tinkers-Defense.iml",
+    "Tinkers-Defense:api": "D:/Github/Tinkers-Defense/Tinkers-Defense.api.iml",
+    "Tinkers-Defense:ideVirtualMain": "D:/Github/Tinkers-Defense/Tinkers-Defense.ideVirtualMain.iml",
+    "Tinkers-Defense:injectedTags": "D:/Github/Tinkers-Defense/Tinkers-Defense.injectedTags.iml",
+    "Tinkers-Defense:main": "D:/Github/Tinkers-Defense/Tinkers-Defense.main.iml",
+    "Tinkers-Defense:mcLauncher": "D:/Github/Tinkers-Defense/Tinkers-Defense.mcLauncher.iml",
+    "Tinkers-Defense:patchedMc": "D:/Github/Tinkers-Defense/Tinkers-Defense.patchedMc.iml",
+    "Tinkers-Defense:test": "D:/Github/Tinkers-Defense/Tinkers-Defense.test.iml"
+  }
+}
