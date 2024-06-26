@@ -32,6 +32,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import lance5057.tDefense.TDIntegration;
 import lance5057.tDefense.TinkersDefense;
 import lance5057.tDefense.core.tools.ModifierSoul;
 import lance5057.tDefense.core.tools.Shield;
@@ -435,7 +436,8 @@ public class TDMods extends ModifiersBase {
     public void UpdateGluttony(ToolCore tool, ItemStack stack, World world, Entity entity, NBTTagCompound tags) {
         final Shield shield = (Shield) tool;
 
-        if (tags.getInteger("Damage") > 0 && shield.getArrowCount(stack) > 0) {
+        // added BG2 check since getArrowCount and setArrowCount depend on it
+        if (TDIntegration.mineAndBlade && tags.getInteger("Damage") > 0 && shield.getArrowCount(stack) > 0) {
             tags.setInteger("Damage", tags.getInteger("Damage") - 2);
             shield.setArrowCount(stack, shield.getArrowCount(stack) - 1);
 
