@@ -1,12 +1,14 @@
 dependencies {
-    api('com.github.GTNewHorizons:TinkersConstruct:1.11.5-GTNH:dev')
+    api('com.github.GTNewHorizons:TinkersConstruct:1.12.2-GTNH:dev')
 
-    compileOnly('com.github.GTNewHorizons:Battlegear2:1.3.0:dev') { transitive = false }
-    compileOnly('com.github.GTNewHorizons:Botania:1.10.3-GTNH:dev') { transitive = false }
-    compileOnly('com.github.GTNewHorizons:BloodMagic:1.4.3:dev') { transitive = false }
+    compileOnly('com.github.GTNewHorizons:Battlegear2:1.4.0:dev') { transitive = false }
+    compileOnly('com.github.GTNewHorizons:Botania:1.11.3-GTNH:dev') { transitive = false }
+    compileOnly('com.github.GTNewHorizons:BloodMagic:1.6.2:dev') { transitive = false }
     compileOnly('com.github.GTNewHorizons:BuildCraft:7.1.39:dev') { transitive = false }
-    compileOnly('dynamicswordskills:DynamicSwordSkills:1.7.1:dev')
+    //compileOnly('dynamicswordskills:DynamicSwordSkills:1.7.1:dev')
+    compileOnly(rfg.deobf('curse.maven:dynamic-sword-skills-226360:2495462'))
     compileOnly('net.industrial-craft:industrialcraft-2:2.2.828-experimental:api')
     compileOnly('thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev')
-    compileOnly('zeldaswordskills:ZeldaSwordSkills:2.5.1:dev')
+    //compileOnly('zeldaswordskills:ZeldaSwordSkills:2.5.1:dev')
+    compileOnly(rfg.deobf('curse.maven:zelda-sword-skills-220540:2384889'))
 }
