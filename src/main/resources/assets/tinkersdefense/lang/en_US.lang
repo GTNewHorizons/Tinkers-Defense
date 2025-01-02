@@ -26,8 +26,10 @@ fluid.moltenAeonsteel.name=Molten Aeon Steel
 fluid.moltenQueensGold.name=Molten Queen's Gold
 fluid.moltenDogbearium.name=Molten Dogbearium
 
+item.heatershield.name=Round Shield
 gui.toolstation.roundshield.name=Round Shield
 gui.toolstation.roundshield.desc=A simple shield with average durability and average defense.
 
+item.roundshield.name=Heater Shield
 gui.toolstation.heatershield.name=Heater Shield
 gui.toolstation.heatershield.desc=A simple shield with high durability and high defense.
