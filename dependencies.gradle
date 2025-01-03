@@ -1,7 +1,7 @@
 dependencies {
     api('com.github.GTNewHorizons:TinkersConstruct:1.13.2-GTNH:dev')
+    api('com.github.GTNewHorizons:Battlegear2:1.4.2:dev') { transitive = false }
 
-    compileOnly('com.github.GTNewHorizons:Battlegear2:1.4.2:dev') { transitive = false }
     compileOnly('com.github.GTNewHorizons:Botania:1.12.3-GTNH:dev') { transitive = false }
     compileOnly('com.github.GTNewHorizons:BloodMagic:1.7.0:dev') { transitive = false }
     compileOnly('com.github.GTNewHorizons:BuildCraft:7.1.41:dev') { transitive = false }
