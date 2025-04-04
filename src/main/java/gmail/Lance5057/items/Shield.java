@@ -2,15 +2,15 @@ package gmail.Lance5057.items;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import gmail.Lance5057.Reference;
+import tconstruct.library.tools.AbilityHelper;
 import tconstruct.library.tools.ToolCore;
 
 public abstract class Shield extends ToolCore {
@@ -40,6 +40,16 @@ public abstract class Shield extends ToolCore {
             }
         }
         return baseSpeed();
+    }
+
+    private static ResourceLocation blockSound;
+
+    public ResourceLocation getBlockSound() {
+        if (blockSound == null) {
+            blockSound = new ResourceLocation(Reference.MOD_ID, "shield");
+        }
+
+        return blockSound;
     }
 
     /**
@@ -73,6 +83,15 @@ public abstract class Shield extends ToolCore {
         return false;
     }
 
+    /* tool_TinkerShield specific */
+    @Override
+    public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
+        if (AbilityHelper.onLeftClickEntity(stack, player, entity, this)) {
+            entity.hurtResistantTime += 7;
+        }
+        return true;
+    }
+
     /**
      * Returns if the item (tool) can harvest results from the block type.
      */
@@ -88,19 +107,19 @@ public abstract class Shield extends ToolCore {
         return web;
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean par5) {
-        super.onUpdate(stack, world, entity, par4, par5);
-        if (entity instanceof EntityPlayerSP) {
-            EntityPlayerSP player = (EntityPlayerSP) entity;
-            ItemStack usingItem = player.getItemInUse();
-            if (usingItem != null && usingItem.getItem() == this) {
-                player.movementInput.moveForward *= 2.5F;
-                player.movementInput.moveStrafe *= 2.5F;
-            }
-        }
-    }
+    // @Override
+    // @SideOnly(Side.CLIENT)
+    // public void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean par5) {
+    // super.onUpdate(stack, world, entity, par4, par5);
+    // if (entity instanceof EntityPlayerSP) {
+    // EntityPlayerSP player = (EntityPlayerSP) entity;
+    // ItemStack usingItem = player.getItemInUse();
+    // if (usingItem != null && usingItem.getItem() == this) {
+    // player.movementInput.moveForward *= 2.5F;
+    // player.movementInput.moveStrafe *= 2.5F;
+    // }
+    // }
+    // }
 
     @Override
     public String[] getTraits() {

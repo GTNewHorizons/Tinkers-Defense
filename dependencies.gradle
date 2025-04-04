@@ -1,10 +1,12 @@
 dependencies {
-    api('com.github.GTNewHorizons:TinkersConstruct:1.13.2-GTNH:dev')
-    api('com.github.GTNewHorizons:Battlegear2:1.4.2:dev') { transitive = false }
+    api('com.github.GTNewHorizons:TinkersConstruct:1.13.16-GTNH:dev')
+    compileOnly('com.github.GTNewHorizons:Battlegear2:1.4.2:dev') { transitive = false }
+    devOnlyNonPublishable('com.github.GTNewHorizons:Backhand:1.6.13:dev') { transitive = false }
+    devOnlyNonPublishable("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.6.2:dev") { transitive = false }
 
-    compileOnly('com.github.GTNewHorizons:Botania:1.12.3-GTNH:dev') { transitive = false }
-    compileOnly('com.github.GTNewHorizons:BloodMagic:1.7.0:dev') { transitive = false }
-    compileOnly('com.github.GTNewHorizons:BuildCraft:7.1.41:dev') { transitive = false }
+    compileOnly('com.github.GTNewHorizons:Botania:1.12.6-GTNH:dev') { transitive = false }
+    compileOnly('com.github.GTNewHorizons:BloodMagic:1.7.5:dev') { transitive = false }
+    compileOnly('com.github.GTNewHorizons:BuildCraft:7.1.42:dev') { transitive = false }
     //compileOnly('dynamicswordskills:DynamicSwordSkills:1.7.1:dev')
     compileOnly(rfg.deobf('curse.maven:dynamic-sword-skills-226360:2495462'))
     compileOnly('net.industrial-craft:industrialcraft-2:2.2.828-experimental:api')
