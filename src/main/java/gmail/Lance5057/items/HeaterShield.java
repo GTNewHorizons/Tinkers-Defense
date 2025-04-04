@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -15,23 +16,36 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import gmail.Lance5057.compat.Mods;
 import mods.battlegear2.api.ISheathed;
 import mods.battlegear2.api.shield.IArrowCatcher;
 import mods.battlegear2.api.shield.IArrowDisplay;
 import mods.battlegear2.api.shield.IShield;
-import tconstruct.library.tools.AbilityHelper;
-import tconstruct.library.tools.HarvestTool;
 import tconstruct.tools.TinkerTools;
 
-public class HeaterShield extends HarvestTool implements IShield, ISheathed, IArrowCatcher, IArrowDisplay {
+@Optional.InterfaceList({ @Optional.Interface(iface = "mods.battlegear2.api.shield.IShield", modid = "battlegear2"),
+        @Optional.Interface(iface = "mods.battlegear2.api.ISheathed", modid = "battlegear2"),
+        @Optional.Interface(iface = "mods.battlegear2.api.shield.IArrowCatcher", modid = "battlegear2"),
+        @Optional.Interface(iface = "mods.battlegear2.api.shield.IArrowDisplay", modid = "battlegear2"), })
+public class HeaterShield extends Shield implements IShield, ISheathed, IArrowCatcher, IArrowDisplay {
 
     int induceDamage = 0;
 
     public HeaterShield() {
         super(0);
         this.setUnlocalizedName("heatershield");
+    }
+
+    @Override
+    public EnumAction getItemUseAction(ItemStack stack) {
+        if (Mods.BG2.isLoaded()) {
+            return super.getItemUseAction(stack);
+        } else {
+            return EnumAction.block;
+        }
     }
 
     @Override
@@ -113,26 +127,13 @@ public class HeaterShield extends HarvestTool implements IShield, ISheathed, IAr
         return "heatershield";
     }
 
-    /* tool_TinkerShield specific */
-    @Override
-    public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-        if (AbilityHelper.onLeftClickEntity(stack, player, entity, this)) {
-            entity.hurtResistantTime += 7;
-            /*
-             * if (entity instanceof EntityLiving) { EntityLiving living = (EntityLiving) entity; if (living.getHealth()
-             * <= 0) { } }
-             */
-            // if (entity.getHealth() <= 0)
-        }
-        return true;
-    }
-
     @Override
     public void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean par5) {
         super.onUpdate(stack, world, entity, par4, par5);
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public int getArrowCount(ItemStack stack) {
         if (stack.hasTagCompound() && stack.getTagCompound().hasKey("arrows")) {
             return stack.getTagCompound().getShort("arrows");
@@ -140,6 +141,7 @@ public class HeaterShield extends HarvestTool implements IShield, ISheathed, IAr
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public void setArrowCount(ItemStack stack, int count) {
         if (!stack.hasTagCompound()) {
             stack.setTagCompound(new NBTTagCompound());
@@ -152,6 +154,7 @@ public class HeaterShield extends HarvestTool implements IShield, ISheathed, IAr
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public boolean catchArrow(ItemStack shield, EntityPlayer player, IProjectile arrow) {
         if (arrow instanceof EntityArrow) {
             setArrowCount(shield, getArrowCount(shield) + 1);
@@ -163,43 +166,51 @@ public class HeaterShield extends HarvestTool implements IShield, ISheathed, IAr
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public boolean sheatheOnBack(ItemStack arg0) {
         return true;
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public void blockAnimation(EntityPlayer player, float dmg) {
         player.worldObj.playSoundAtEntity(player, "battlegear2:shield", 1, 1);
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public boolean canBlock(ItemStack shield, DamageSource source) {
         return !source.isUnblockable();
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public int getBashTimer(ItemStack arg0) {
         // TODO Auto-generated method stub
         return 10;
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public float getBlockAngle(ItemStack arg0) {
         // TODO Auto-generated method stub
         return 60;
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public float getDamageDecayRate(ItemStack shield, float amount) {
         return 0;
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public float getDamageReduction(ItemStack arg0, DamageSource arg1) {
         return 1f;
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public float getDecayRate(ItemStack stack) {
         NBTTagCompound tags = stack.getTagCompound();
         float recovery = tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") / 1.5f;
@@ -207,6 +218,7 @@ public class HeaterShield extends HarvestTool implements IShield, ISheathed, IAr
     }
 
     @Override
+    @Optional.Method(modid = "battlegear2")
     public float getRecoveryRate(ItemStack stack) {
         NBTTagCompound tags = stack.getTagCompound();
         float recovery = tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") / 1.5f;
@@ -218,20 +230,21 @@ public class HeaterShield extends HarvestTool implements IShield, ISheathed, IAr
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         NBTTagCompound tags = par1ItemStack.getTagCompound();
         super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
-        par3List.add("");
-        par3List.add(
-                EnumChatFormatting.DARK_GREEN
-                        + ItemStack.field_111284_a.format(
-                                1F / (10f / (tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") / 1.5f)) / 20F)
-                        + StatCollector.translateToLocal("attribute.shield.block.time"));
-        int arrowCount = getArrowCount(par1ItemStack);
-        if (arrowCount > 0) {
+        if (Mods.BG2.isLoaded()) {
+            par3List.add("");
             par3List.add(
-                    String.format(
-                            "%s%s %s",
-                            EnumChatFormatting.GOLD,
-                            arrowCount,
-                            StatCollector.translateToLocal("attribute.shield.arrow.count")));
+                    EnumChatFormatting.DARK_GREEN + ItemStack.field_111284_a.format(
+                            1F / (10f / (tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") / 1.5f)) / 20F)
+                            + StatCollector.translateToLocal("attribute.shield.block.time"));
+            int arrowCount = getArrowCount(par1ItemStack);
+            if (arrowCount > 0) {
+                par3List.add(
+                        String.format(
+                                "%s%s %s",
+                                EnumChatFormatting.GOLD,
+                                arrowCount,
+                                StatCollector.translateToLocal("attribute.shield.arrow.count")));
+            }
         }
     }
 

@@ -16,6 +16,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -128,6 +129,10 @@ public class TinkersDefense {
         NetworkRegistry.INSTANCE.registerGuiHandler(TinkersDefense.instance, new CommonProxy());
         MinecraftForge.EVENT_BUS.register(this);
 
+        DefenseEvents events = new DefenseEvents();
+        MinecraftForge.EVENT_BUS.register(events);
+        FMLCommonHandler.instance().bus().register(events);
+
         // AeonSteel
         item_AeonSteelIngot = new AeonSteelIngot().setCreativeTab(tabName).setMaxStackSize(64)
                 .setUnlocalizedName("AeonSteelIngot").setTextureName(Reference.MOD_ID + ":AeonSteelIngot");
@@ -228,7 +233,6 @@ public class TinkersDefense {
 
     @EventHandler
     public void init(FMLInitializationEvent e) {
-        System.out.print(Reference.MOD_ID);
         PatternBuilder pb = PatternBuilder.instance;
 
         // Aeonsteel
