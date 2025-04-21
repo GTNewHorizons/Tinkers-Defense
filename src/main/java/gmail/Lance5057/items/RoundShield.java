@@ -213,18 +213,15 @@ public class RoundShield extends HarvestTool implements IShield, ISheathed, IArr
         super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
         par3List.add("");
         par3List.add(
-            EnumChatFormatting.DARK_GREEN
-                + String.format(
-                    StatCollector.translateToLocal("attribute.shield.block.time"),
-                    ItemStack.field_111284_a.format(
-                        1F / (10f / tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") * 2) / 20F)));
+                EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocalFormatted(
+                        "attribute.shield.block.time",
+                        ItemStack.field_111284_a.format(
+                                1F / (10f / tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") * 2) / 20F)));
         int arrowCount = getArrowCount(par1ItemStack);
         if (arrowCount > 0) {
             par3List.add(
-                EnumChatFormatting.GOLD
-                    + String.format(
-                        StatCollector.translateToLocal("attribute.shield.arrow.count"),
-                        arrowCount));
+                    EnumChatFormatting.GOLD
+                            + StatCollector.translateToLocalFormatted("attribute.shield.arrow.count", arrowCount));
         }
     }
 
