@@ -217,8 +217,7 @@ public class RoundShield extends HarvestTool implements IShield, ISheathed, IArr
                 + String.format(
                     StatCollector.translateToLocal("attribute.shield.block.time"),
                     ItemStack.field_111284_a.format(
-                        1F / (10f / tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") * 2) / 20F)
-                ));
+                        1F / (10f / tags.getCompoundTag("InfiTool").getInteger("MiningSpeed") * 2) / 20F)));
         int arrowCount = getArrowCount(par1ItemStack);
         if (arrowCount > 0) {
             par3List.add(
