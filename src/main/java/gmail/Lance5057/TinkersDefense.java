@@ -11,7 +11,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -126,7 +125,6 @@ public class TinkersDefense {
         GameRegistry.registerTileEntity(TileEntity_JewelersBench.class, "Tile_JewelersBench");
 
         NetworkRegistry.INSTANCE.registerGuiHandler(TinkersDefense.instance, new CommonProxy());
-        MinecraftForge.EVENT_BUS.register(this);
 
         // AeonSteel
         item_AeonSteelIngot = new AeonSteelIngot().setCreativeTab(tabName).setMaxStackSize(64)
